@@ -34,6 +34,19 @@
             margin-bottom: 1em;
         }
 
+        button {
+            border-radius: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            border-width: 1px;
+            border-color: #006699;
+            background-color: #E5E8E8;
+        }
+        .hide-answer {
+            display: none;
+        }
         .cont-cent {
             text-align: center;
         }
@@ -54,7 +67,37 @@
             font-size: 32px;
             box-shadow: 10px 10px 5px grey;
         }
+        .code {
+            font-family: Consolas;
+            font-size: 18px;
+            background-color: #1F1F1F;
+            color: #fff;
+            padding: 10px;
+            border-width: 2px;
+            border-left: 20px;
+            border-style: solid;
+            border-color: #86B42B;
+            box-shadow: 10px 10px 5px grey;
+        }
     </style>
+    <script>
+        function alterAnswer(id){
+            var element = document.getElementById(id);
+            var hide = true
+            var button = document.getElementById(`btn${id}`);
+            element.classList.forEach(myElement => {
+                if(myElement == "hide-answer") {
+                    hide = false;
+                    element.classList.remove("hide-answer");
+                    button.innerHTML = "Ocultar respuesta";
+                }
+            });
+            if (hide){
+                element.classList.add("hide-answer");
+                button.innerHTML = "Mostrar respuesta";
+            }
+        }
+    </script>
     <section>
         <div class="cont-cent" style="margin-bottom: 0;">
             <img src="./Logo 1 letra negra.png" style="width: 20em;">
@@ -68,7 +111,7 @@
                     <a href="#lab1">Lab 1: Introdución a Kibana</a>
                 </li>
                 <li>
-                    <a href="">Lab 2: Discover Interface</a>
+                    <a href="#lab2">Lab 2: Discover Interface</a>
                 </li>
                 <li>
                     <a href="">Lab 3: Visualizing Data</a>
@@ -172,7 +215,7 @@
                     <br>
                     <br>
                     <div class="cont-cent">
-                        <img src="./3.png" alt="">
+                        <img src="./3.PNG" alt="">
                     </div>
                 </li>
                 <li>
@@ -218,6 +261,87 @@
             </ol>
         </div>
     </section>
+    <section id="lab2">
+        <div class="title" style="margin-top: 0;">
+            <label for="">Lab 2: Discover Interface</label>
+        </div>
+        <div class="cont-left">
+            <label><strong>Objetivo:</strong> El objetivo de este laboratorio es familiarizarse con la interfaz del modulo <strong>Discover</strong> de kibana</label>
+        </div>
+        <div class="cont-left">
+            <ol>
+                <li>
+                    Ingrese a la sección de <strong>Discover</strong> en el menú lateral izquierdo:
+                    <br>
+                    <br>
+                    <div class="cont-cent">
+                        <img src="./7.PNG" alt="">
+                    </div>
+                </li>
+                <li>
+                    Seleccione el index pattern <strong>kibana_sample_data_flights</strong>
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="1">
+                        <img src="./8.PNG" alt="">
+                    </div>
+                    <button id="btn1" onclick="alterAnswer(1)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Seleccione el rango de tiempo de la ultima semana 
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="2">
+                        <img src="./9.PNG" alt="">
+                    </div>
+                    <button id="btn2" onclick="alterAnswer(2)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Añada a la tabla de documentos los campos <strong>Carrier</strong>, <strong>OriginCityName</strong>, <strong>OriginCountry</strong> y <strong>OriginWeather</strong> 
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="3">
+                        <div class="cont-left" style="margin: 0; font-size: 18px;">
+                            <label style="">En el menú izquierdo busque los campos por nombre y seleccione el botón azul para añadir</label>
+                        </div>
+                        <br>
+                        <img src="./10.PNG" alt="">
+                    </div>
+                    <button id="btn3" onclick="alterAnswer(3)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Ordene los documentos <strong>unicamente</strong> en orden alfabetico de la A a la Z, segun el Pais de origen (<strong>OriginCountry</strong>)
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="4">
+                        <div class="cont-left" style="margin: 0; font-size: 18px;">
+                            <label style="">Primero añada el ordenamiento en el campo <strong>OriginCountry</strong> luego remueva el ordenamiento del campo <strong>Time</strong> </label>
+                        </div>
+                        <br>
+                        <img src="./11.PNG" alt="">
+                    </div>
+                    <button id="btn4" onclick="alterAnswer(4)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Usando <strong>KQL</strong> añada un filtro para que unicamente se muestren los documentos del Carrier <strong>Logstash Airways</strong> con ciudad de destino <strong>Dubai</strong>
+                    <br>
+                    <br>
+                    <div class="cont-left hide-answer code" id="5">
+                        Carrier:"Logstash Airways" and DestCityName:"Dubai"
+                    </div>
+                    <button id="btn5" onclick="alterAnswer(5)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Remueva el filtro creado en el punto anterior y cree los filtros equivalentes usando la herramienta de <strong>Filter</strong>
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="6">
+                        <img src="./12.PNG" alt="">
+                    </div>
+                    <button id="btn6" onclick="alterAnswer(6)">Mostrar respuesta</button>
+                </li>
+            </ol>
+        </div>
+    </section>
 </body>
-
 </html>
