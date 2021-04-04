@@ -343,8 +343,87 @@
             </ol>
         </div>
     </section>
-    <select id="lab3">
-
-    </select>
+    <section id="lab3">
+        <div class="title" style="margin-top: 0;">
+            <label for="">Lab 3: Visualizing Data</label>
+        </div>     
+        <div class="cont-left">
+            <label><strong>Objetivo:</strong> El objetivo de este laboratorio es familiarizarse con la herramienta <strong>Lens</strong> del modulo <strong>Visualize Library</strong> de kibana</label>
+        </div>
+        <div class="cont-left">
+            <ol>
+                <li>
+                    Ingrese a la sección de <strong>Visualize Library</strong> en el menú lateral izquierdo:
+                    <br>
+                    <br>
+                    <div class="cont-cent">
+                        <img src="./13.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    Seleccione <strong>Create visualization</strong>:
+                    <br>
+                    <br>
+                    <div class="cont-cent">
+                        <img src="./14.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    Seleccione <strong>Lens</strong>:
+                    <br>
+                    <br>
+                    <div class="cont-cent">
+                        <img src="./15.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    Seleccione el index pattern <strong>kibana_sample_data_flights</strong>
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="7">
+                        <img src="./8.png" alt="">
+                    </div>
+                    <button id="btn7" onclick="alterAnswer(7)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Seleccione el rango de tiempo de la ultima semana 
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="8">
+                        <img src="./9.png" alt="">
+                    </div>
+                    <button id="btn8" onclick="alterAnswer(8)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Cree una visualización de diagrama de barras que muestre el valor promedio del tiquete (<strong>AvgTicketPrice</strong>) por cada dos días de la última semana.
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="9">
+                        <img src="./16.png" alt="" style="width: 100%;">
+                        <img src="./17.png" alt="" >
+                    </div>
+                    <button id="btn9" onclick="alterAnswer(9)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Cree una visualización de diagrama de barras que muestre los paises de destino (<strong>DestCounty</strong>) a los que mas tiempo en minutos toma llegar (<strong>FlightTimeMin</strong>).
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="10">
+                        <img src="./18.png" alt="" style="width: 100%;">
+                    </div>
+                    <button id="btn10" onclick="alterAnswer(10)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Haga que la visualización que creo en la tarea anterior muestre <strong>unicamente</strong> el <strong>Top 10</strong> de paises
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="11">
+                        <img src="./19.png" alt="" >
+                    </div>
+                    <button id="btn11" onclick="alterAnswer(11)">Mostrar respuesta</button>
+                </li>
+            </ol>
+        </div>
+    </section>
 </body>
 </html>
