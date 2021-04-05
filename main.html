@@ -124,7 +124,7 @@
                     <a href="#lab4">Lab 4: The Query Bar</a>
                 </li>
                 <li>
-                    <a href="">Lab 5: Searching on Strings</a>
+                    <a href="#lab5">Lab 5: Searching on Strings</a>
                 </li>
                 <li>
                     <a href="">Lab 6: Filters</a>
@@ -521,19 +521,114 @@
                     <button id="btn16" onclick="alterAnswer(16)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Usando el lenguaje de busquedas de <strong>Lucene</strong> añada un filtro que muestre unicamente los documentos los documentos en
+                    Usando el lenguaje de busquedas de <strong>Lucene</strong> añada un filtro que muestre unicamente
+                    los documentos los documentos en
                     los cuales
-                    el Host sea <strong>elastic</strong>, que sean peticiones tipo <strong>GET</strong>, ó los documentos en los cuales
+                    el Host sea <strong>elastic</strong>, que sean peticiones tipo <strong>GET</strong>, ó los
+                    documentos en los cuales
                     la ip del cliente comience con <strong>120.56.165</strong> Estos deben verse de primeras.
                     <br>
                     <br>
                     <div class="cont-left hide-answer code" id="17">
-                        request:"/beats"^2 or host.keyword : *elastic* and message : *GET* 
+                        request:"/beats"^2 or host.keyword : *elastic* and message : *GET*
                     </div>
                     <button id="btn17" onclick="alterAnswer(17)">Mostrar respuesta</button>
                 </li>
             </ol>
         </div>
+    </section>
+    <section id="lab5">
+        <div class="title" style="margin-top: 0;">
+            <label for="">Lab 5: Searching on Strings</label>
+        </div>
+        <div class="cont-left">
+            <label><strong>Objetivo:</strong> El objetivo de este laboratorio es familiarizarse con el funcionamiento
+                del lenguaje
+                <strong>KQL</strong> de kibana</label> en operaciones sobre texto
+        </div>
+        <div class="cont-left">
+            <ol>
+                <li>
+                    Ingrese a la sección de <strong>Discover</strong> en el menú lateral izquierdo:
+                    <br>
+                    <br>
+                    <div class="cont-cent">
+                        <img src="./7.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    Seleccione el index pattern <strong>kibana_sample_data_logs</strong>
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="18">
+                        <img src="./20.png" alt="">
+                    </div>
+                    <button id="btn18" onclick="alterAnswer(18)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Seleccione el rango de tiempo de la ultima semana
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="19">
+                        <img src="./9.png" alt="">
+                    </div>
+                    <button id="btn19" onclick="alterAnswer(19)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Usando <strong>KQL</strong> busque los documentos que contengan <strong>FIREFOX</strong>
+                    en el campo <strong>message</strong>
+                    <br>
+                    <br>
+                    <div class="cont-left hide-answer code" id="20">
+                        message: "*FIREFOX*"
+                    </div>
+                    <button id="btn20" onclick="alterAnswer(20)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Usando <strong>KQL</strong> busque los documentos que contengan <strong>Firefox</strong>
+                    en el campo <strong>message</strong>. ¿Al hacer ese cambio en la busqueda la cantidad de documentos
+                    cambia?
+                    <br>
+                    <br>
+                    <div class="cont-left hide-answer code" id="21">
+                        message: "*Firefox*"
+                    </div>
+                    <button id="btn21" onclick="alterAnswer(21)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Usando <strong>KQL</strong> busque los documentos que contengan <strong>elastic</strong>
+                    en el campo <strong>host.keyword</strong>
+                    <br>
+                    <br>
+                    <div class="cont-left hide-answer code" id="22">
+                        host.keyword : *elastic*
+                    </div>
+                    <button id="btn22" onclick="alterAnswer(22)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Usando <strong>KQL</strong> busque los documentos que contengan <strong>ELASTIC</strong>
+                    en el campo <strong>host.keyword</strong>. ¿Al hacer ese cambio en la busqueda la cantidad de
+                    documentos cambia?
+                    <br>
+                    <br>
+                    <div class="cont-left hide-answer code" id="23">
+                        host.keyword : *ELASTIC*
+                    </div>
+                    <button id="btn23" onclick="alterAnswer(23)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    ¿Por que en un caso cambio la cantidad de documentos y en el otro no?
+                    <br>
+                    <br>
+                    <div class="cont-left hide-answer" id="24">
+                        Al realizar la busqueda en un campo de tipo <strong>Keyword</strong> se esta realizando una
+                        busqueda sobre un campo no analisado eso hace que la busqueda deba ser exacta y no contemple
+                        herramientas de analsisis como la equivalencia entre busqueda en minúsculas y mayúsculas
+                    </div>
+                    <button id="btn24" onclick="alterAnswer(24)">Mostrar respuesta</button>
+                </li>
+
+            </ol>
     </section>
 </body>
 
