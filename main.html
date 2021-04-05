@@ -30,6 +30,7 @@
             background-color: #fff;
             padding: 0.001em;
         }
+
         li {
             margin-bottom: 1em;
         }
@@ -44,9 +45,11 @@
             border-color: #006699;
             background-color: #E5E8E8;
         }
+
         .hide-answer {
             display: none;
         }
+
         .cont-cent {
             text-align: center;
         }
@@ -67,6 +70,7 @@
             font-size: 32px;
             box-shadow: 10px 10px 5px grey;
         }
+
         .code {
             font-family: Consolas;
             font-size: 18px;
@@ -81,18 +85,18 @@
         }
     </style>
     <script>
-        function alterAnswer(id){
+        function alterAnswer(id) {
             var element = document.getElementById(id);
             var hide = true
             var button = document.getElementById(`btn${id}`);
             element.classList.forEach(myElement => {
-                if(myElement == "hide-answer") {
+                if (myElement == "hide-answer") {
                     hide = false;
                     element.classList.remove("hide-answer");
                     button.innerHTML = "Ocultar respuesta";
                 }
             });
-            if (hide){
+            if (hide) {
                 element.classList.add("hide-answer");
                 button.innerHTML = "Mostrar respuesta";
             }
@@ -203,15 +207,22 @@
             <label for="">Lab 1: Introdución a Kibana</label>
         </div>
         <div class="cont-left">
-            <label><strong>Objetivo:</strong> El objetivo de este laboratorio es presentarle el entorno de laboratorio de Elastic Cloud y brindarle una breve descripción del ambiente.</label>
+            <label><strong>Objetivo:</strong> El objetivo de este laboratorio es presentarle el entorno de laboratorio
+                de Elastic Cloud y brindarle una breve descripción del ambiente.</label>
         </div>
         <div class="cont-left">
-            <label><strong>NOTA:</strong> Todas las prácticas de laboratorio se realizarán mediante el servicio Elastic Cloud. El entorno del laboratorio se diseñó para esta capacitación y tiene todo lo que necesita para completar los laboratorios con éxito. Una vez que haya completado el curso y su entorno de laboratorio ya no esté disponible, podrá completar los laboratorios en instancias de Tier gratuito de Elasticsearch. Utilice estas instrucciones como referencia sobre cómo ejecutar los laboratorios en su propia máquina.</label>
+            <label><strong>NOTA:</strong> Todas las prácticas de laboratorio se realizarán mediante el servicio Elastic
+                Cloud. El entorno del laboratorio se diseñó para esta capacitación y tiene todo lo que necesita para
+                completar los laboratorios con éxito. Una vez que haya completado el curso y su entorno de laboratorio
+                ya no esté disponible, podrá completar los laboratorios en instancias de Tier gratuito de Elasticsearch.
+                Utilice estas instrucciones como referencia sobre cómo ejecutar los laboratorios en su propia
+                máquina.</label>
         </div>
         <div class="cont-left">
             <ol>
                 <li>
-                    Acceda a el link de kibana e inicie sesión seleccionando la opción <strong>Log in with Elasticsearch</strong>: 
+                    Acceda a el link de kibana e inicie sesión seleccionando la opción <strong>Log in with
+                        Elasticsearch</strong>:
                     <br>
                     <br>
                     <div class="cont-cent">
@@ -227,7 +238,8 @@
                     </div>
                 </li>
                 <li>
-                    Haciendo click en el menú lateral encontrara la sección dedicada a las features de kibana <strong>Dashboard, Visualize, Maps, Discover</strong>:
+                    Haciendo click en el menú lateral encontrara la sección dedicada a las features de kibana
+                    <strong>Dashboard, Visualize, Maps, Discover</strong>:
                     <br>
                     <br>
                     <div class="cont-cent">
@@ -235,7 +247,7 @@
                     </div>
                 </li>
                 <li>
-                    Seleccione la opción <strong>Ingest your data</strong>:            
+                    Seleccione la opción <strong>Ingest your data</strong>:
                     <br>
                     <br>
                     <div class="cont-cent">
@@ -243,7 +255,7 @@
                     </div>
                 </li>
                 <li>
-                    Seleccione la opcion <strong>Sample Data</strong>:                 
+                    Seleccione la opcion <strong>Sample Data</strong>:
                     <br>
                     <br>
                     <div class="cont-cent">
@@ -251,7 +263,7 @@
                     </div>
                 </li>
                 <li>
-                    Seleccione la opcion <strong>Add data</strong> en los tres Datasets disponible:                 
+                    Seleccione la opcion <strong>Add data</strong> en los tres Datasets disponible:
                     <br>
                     <br>
                     <div class="cont-cent">
@@ -266,7 +278,8 @@
             <label for="">Lab 2: Discover Interface</label>
         </div>
         <div class="cont-left">
-            <label><strong>Objetivo:</strong> El objetivo de este laboratorio es familiarizarse con la interfaz del modulo <strong>Discover</strong> de kibana</label>
+            <label><strong>Objetivo:</strong> El objetivo de este laboratorio es familiarizarse con la interfaz del
+                modulo <strong>Discover</strong> de kibana</label>
         </div>
         <div class="cont-left">
             <ol>
@@ -288,7 +301,7 @@
                     <button id="btn1" onclick="alterAnswer(1)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Seleccione el rango de tiempo de la ultima semana 
+                    Seleccione el rango de tiempo de la ultima semana
                     <br>
                     <br>
                     <div class="cont-cent hide-answer" id="2">
@@ -297,12 +310,14 @@
                     <button id="btn2" onclick="alterAnswer(2)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Añada a la tabla de documentos los campos <strong>Carrier</strong>, <strong>OriginCityName</strong>, <strong>OriginCountry</strong> y <strong>OriginWeather</strong> 
+                    Añada a la tabla de documentos los campos <strong>Carrier</strong>, <strong>OriginCityName</strong>,
+                    <strong>OriginCountry</strong> y <strong>OriginWeather</strong>
                     <br>
                     <br>
                     <div class="cont-cent hide-answer" id="3">
                         <div class="cont-left" style="margin: 0; font-size: 18px;">
-                            <label style="">En el menú izquierdo busque los campos por nombre y seleccione el botón azul para añadir</label>
+                            <label style="">En el menú izquierdo busque los campos por nombre y seleccione el botón azul
+                                para añadir</label>
                         </div>
                         <br>
                         <img src="./10.png" alt="">
@@ -310,12 +325,14 @@
                     <button id="btn3" onclick="alterAnswer(3)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Ordene los documentos <strong>unicamente</strong> en orden alfabetico de la A a la Z, segun el Pais de origen (<strong>OriginCountry</strong>)
+                    Ordene los documentos <strong>unicamente</strong> en orden alfabetico de la A a la Z, segun el Pais
+                    de origen (<strong>OriginCountry</strong>)
                     <br>
                     <br>
                     <div class="cont-cent hide-answer" id="4">
                         <div class="cont-left" style="margin: 0; font-size: 18px;">
-                            <label style="">Primero añada el ordenamiento en el campo <strong>OriginCountry</strong> luego remueva el ordenamiento del campo <strong>Time</strong> </label>
+                            <label style="">Primero añada el ordenamiento en el campo <strong>OriginCountry</strong>
+                                luego remueva el ordenamiento del campo <strong>Time</strong> </label>
                         </div>
                         <br>
                         <img src="./11.png" alt="">
@@ -323,7 +340,8 @@
                     <button id="btn4" onclick="alterAnswer(4)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Usando <strong>KQL</strong> añada un filtro para que unicamente se muestren los documentos del Carrier <strong>Logstash Airways</strong> con ciudad de destino <strong>Dubai</strong>
+                    Usando <strong>KQL</strong> añada un filtro para que unicamente se muestren los documentos del
+                    Carrier <strong>Logstash Airways</strong> con ciudad de destino <strong>Dubai</strong>
                     <br>
                     <br>
                     <div class="cont-left hide-answer code" id="5">
@@ -332,7 +350,8 @@
                     <button id="btn5" onclick="alterAnswer(5)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Remueva el filtro creado en el punto anterior y cree los filtros equivalentes usando la herramienta de <strong>Filter</strong>
+                    Remueva el filtro creado en el punto anterior y cree los filtros equivalentes usando la herramienta
+                    de <strong>Filter</strong>
                     <br>
                     <br>
                     <div class="cont-cent hide-answer" id="6">
@@ -346,9 +365,10 @@
     <section id="lab3">
         <div class="title" style="margin-top: 0;">
             <label for="">Lab 3: Visualizing Data</label>
-        </div>     
+        </div>
         <div class="cont-left">
-            <label><strong>Objetivo:</strong> El objetivo de este laboratorio es familiarizarse con la herramienta <strong>Lens</strong> del modulo <strong>Visualize Library</strong> de kibana</label>
+            <label><strong>Objetivo:</strong> El objetivo de este laboratorio es familiarizarse con la herramienta
+                <strong>Lens</strong> del modulo <strong>Visualize Library</strong> de kibana</label>
         </div>
         <div class="cont-left">
             <ol>
@@ -386,7 +406,7 @@
                     <button id="btn7" onclick="alterAnswer(7)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Seleccione el rango de tiempo de la ultima semana 
+                    Seleccione el rango de tiempo de la ultima semana
                     <br>
                     <br>
                     <div class="cont-cent hide-answer" id="8">
@@ -395,17 +415,20 @@
                     <button id="btn8" onclick="alterAnswer(8)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Cree una visualización de diagrama de barras que muestre el valor promedio del tiquete (<strong>AvgTicketPrice</strong>) por cada dos días de la última semana.
+                    Cree una visualización de diagrama de barras que muestre el valor promedio del tiquete
+                    (<strong>AvgTicketPrice</strong>) por cada dos días de la última semana.
                     <br>
                     <br>
                     <div class="cont-cent hide-answer" id="9">
                         <img src="./16.png" alt="" style="width: 100%;">
-                        <img src="./17.png" alt="" >
+                        <img src="./17.png" alt="">
                     </div>
                     <button id="btn9" onclick="alterAnswer(9)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Cree una visualización de diagrama de barras que muestre los paises de destino (<strong>DestCounty</strong>) a los que mas tiempo en minutos toma llegar (<strong>FlightTimeMin</strong>).
+                    Cree una visualización de diagrama de barras que muestre los paises de destino
+                    (<strong>DestCounty</strong>) a los que mas tiempo en minutos toma llegar
+                    (<strong>FlightTimeMin</strong>).
                     <br>
                     <br>
                     <div class="cont-cent hide-answer" id="10">
@@ -414,11 +437,12 @@
                     <button id="btn10" onclick="alterAnswer(10)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Haga que la visualización que creo en la tarea anterior muestre <strong>unicamente</strong> el <strong>Top 10</strong> de paises
+                    Haga que la visualización que creo en la tarea anterior muestre <strong>unicamente</strong> el
+                    <strong>Top 10</strong> de paises
                     <br>
                     <br>
                     <div class="cont-cent hide-answer" id="11">
-                        <img src="./19.png" alt="" >
+                        <img src="./19.png" alt="">
                     </div>
                     <button id="btn11" onclick="alterAnswer(11)">Mostrar respuesta</button>
                 </li>
@@ -428,7 +452,89 @@
     <section id="lab4">
         <div class="title" style="margin-top: 0;">
             <label for="">Lab 4: The Query Bar</label>
-        </div>     
+        </div>
+        <div class="cont-left">
+            <label><strong>Objetivo:</strong> El objetivo de este laboratorio es familiarizarse con el lenguaje
+                <strong>KQL</strong> de kibana</label> y desarollar las habilidades que l permitan realizar busquedas
+            precisas y usar herramientras como <strong>Fuzzy Search</strong>, <strong>Reguex</strong> ó
+            <strong>wildcars</strong>
+        </div>
+        <div class="cont-left">
+            <ol>
+                <li>
+                    Ingrese a la sección de <strong>Discover</strong> en el menú lateral izquierdo:
+                    <br>
+                    <br>
+                    <div class="cont-cent">
+                        <img src="./7.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    Seleccione el index pattern <strong>kibana_sample_data_logs</strong>
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="12">
+                        <img src="./20.png" alt="">
+                    </div>
+                    <button id="btn12" onclick="alterAnswer(12)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Seleccione el rango de tiempo de la ultima semana
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="13">
+                        <img src="./9.png" alt="">
+                    </div>
+                    <button id="btn13" onclick="alterAnswer(13)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Usando <strong>KQL</strong> añada un filtro para que unicamente se muestren los documentos en los
+                    cuales
+                    el Host sea <strong>elastic</strong> y que sean peticiones tipo <strong>GET</strong>
+                    <br>
+                    <br>
+                    <div class="cont-left hide-answer code" id="14">
+                        host.keyword : *elastic* and message : *GET*
+                    </div>
+                    <button id="btn14" onclick="alterAnswer(14)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Usando <strong>KQL</strong> añada un filtro para que unicamente se muestren los documentos en los
+                    cuales
+                    la ip del cliente comience con <strong>120.56.165</strong>
+                    <br>
+                    <br>
+                    <div class="cont-left hide-answer code" id="15">
+                        clientip :120.56.165.0/18
+                    </div>
+                    <button id="btn15" onclick="alterAnswer(15)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Usando el lenguaje de busquedas de <strong>Lucene</strong> añada un filtro para que le permita
+                    encontrar los documentos que contienen
+                    <strong>AppleWebKit</strong> buscando <strong>ApleWeKyt</strong> en el campo <strong>agent</strong>
+                    <br>
+                    <br>
+                    <div class="cont-left hide-answer code" id="16">
+                        agent : *ApleWeKyt~3*
+                    </div>
+                    <button id="btn16" onclick="alterAnswer(16)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Usando el lenguaje de busquedas de <strong>Lucene</strong> añada un filtro que muestre unicamente los documentos los documentos en
+                    los cuales
+                    el Host sea <strong>elastic</strong>, que sean peticiones tipo <strong>GET</strong>, ó los documentos en los cuales
+                    la ip del cliente comience con <strong>120.56.165</strong> Estos deben verse de primeras.
+                    <br>
+                    <br>
+                    <div class="cont-left hide-answer code" id="17">
+                        request:"/beats"^2 or host.keyword : *elastic* and message : *GET* 
+                    </div>
+                    <button id="btn17" onclick="alterAnswer(17)">Mostrar respuesta</button>
+                </li>
+            </ol>
+        </div>
     </section>
 </body>
+
 </html>
