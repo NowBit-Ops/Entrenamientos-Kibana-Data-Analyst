@@ -127,7 +127,7 @@
                     <a href="#lab5">Lab 5: Searching on Strings</a>
                 </li>
                 <li>
-                    <a href="">Lab 6: Filters</a>
+                    <a href="#lab6">Lab 6: Filters</a>
                 </li>
                 <li>
                     <a href="">Lab 7: Behind the Visualizations</a>
@@ -627,8 +627,66 @@
                     </div>
                     <button id="btn24" onclick="alterAnswer(24)">Mostrar respuesta</button>
                 </li>
-
             </ol>
+        </div>
+    </section>
+    <section id="lab6">
+        <div class="title" style="margin-top: 0;">
+            <label for="">Lab 6: Filters</label>
+        </div>
+        <div class="cont-left">
+            <label><strong>Objetivo:</strong> El objetivo de este laboratorio es familiarizarse con el funcionamiento
+                del lenguaje
+                <strong>KQL</strong> de kibana</label> en operaciones sobre texto
+        </div>
+        <div class="cont-left">
+            <ol>
+                <li>
+                    Ingrese a la sección de <strong>Discover</strong> en el menú lateral izquierdo:
+                    <br>
+                    <br>
+                    <div class="cont-cent">
+                        <img src="./7.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    Seleccione el index pattern <strong>kibana_sample_data_flights</strong>
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="25">
+                        <img src="./8.png" alt="">
+                    </div>
+                    <button id="btn25" onclick="alterAnswer(25)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Seleccione el rango de tiempo de la ultima semana
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="26">
+                        <img src="./9.png" alt="">
+                    </div>
+                    <button id="btn26" onclick="alterAnswer(26)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Cree un filtro que unicamente muestre los vuelos que recorrieron mas de <strong>700</strong> Millas
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="27">
+                        <img src="./21.png" alt="">
+                    </div>
+                    <button id="btn27" onclick="alterAnswer(27)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Usando la herramienta de filtros cree un filtro muestre todos los vuelos de las aerolinas del punto anterior que <strong>NO</strong> tienen como destino la ciudad de <strong>Dublin</strong>
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="28">
+                        <img src="./23.png" alt="">
+                    </div>
+                    <button id="btn28" onclick="alterAnswer(28)">Mostrar respuesta</button>
+                </li>
+            </ol>
+        </div>
     </section>
 </body>
 
