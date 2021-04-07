@@ -19,6 +19,10 @@
             background-image: linear-gradient(to right, #66ccff, #006699, #66ccff);
         }
 
+        mark { 
+            background-color: #ebebeb;
+        }
+
         body {
             background-color: #E5E8E8;
             padding: 3em;
@@ -997,26 +1001,104 @@
             <label for="">Lab 10: Introduction to TSVB</label>
         </div>
         <div class="cont-left">
-            <label><strong>Objetivo:</strong> En este laboratorio veremos cómo podemos usar Time Series Visual Builder
-                (TSVB), para crear visualización para representar series de tiempo.
+            <label><strong>Objetivo:</strong> En este laboratorio veremos cómo podemos usar el Time Series Visual Builder (TSVB), 
+                para crear visualizaciones que representen series de tiempo.
         </div>
         <div class="cont-left">
             <ol>
                 <li>
-                    Ingrese a la sección de <strong>Visualize Library</strong> en el menú lateral izquierdo:
+                    Vaya al modulo de discover e intente ver los documentos.
+                    Los documentos pueden parecer extraños pero no hay por qué preocuparse, los vamos a analizar y entender.
+                    Pero antes de todo, comprenderemos qué son los registros de apache.
+                    Cuando se tiene un sitio web (o cualquier aplicación web) es muy común tener lo que se llama un servidor web como Apache.
+                    El servidor web Apache ayudará a manejar y entregar páginas web a los usuarios.
+                    Este servidor Apache generará lo que llamamos logs, que son registros de los diferentes eventos que suceden en el servidor Apache.
+                    Un evento será, por ejemplo, que alguien acceda a una página web específica, más adelante veremos qué tipo de información se registra. 
+                    Normalmente, así es como se implementa:
                     <br>
                     <br>
                     <div class="cont-cent">
-                        <img src="./13.png" alt="">
+                        <img src="./10.1.png" alt="" style="width: 100%;">
                     </div>
+                    Demos un vistazo a los diferentes campos presentados en los logs de apache.
+                    <br>
+                    <br>
+                    <ul>
+                        <li>
+                            Empecemos con <mark>@timestamp</mark>, este campo es simplemente la fecha de cuando sucedió el evento.
+                        </li>
+                        <li>
+                            Los que comienzan por <mark>_</mark> son lo que llamamos campos de metadatos, por ejemlo dentro de estos se encuentra el id, nombre del indice, etc.
+                        </li>
+                        <li>
+                            El campo <mark>agent</mark> contiene lo que se llama el agente del usuario. Cuando alguien está navegando en internet, es muy util para el servidor web
+                            saber que tipo de navegador está usando el usuario para adaptar su contenido. Así que se verán datos como: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0
+                            este agente de usuario quiere decir que alguien está accediendo a la página a través de Firefox en Windows 7. Como se puede evidenciar, 
+                            este campo no es tan fácil de leer. Por lo tanto, es posible transformarlo para extraer más información: 
+                            <br>
+                            <br>
+                            <ul>
+                                <li>
+                                    <mark>useragent.device</mark> Tipo de dispositivo que el usuario usó para acceder al sitio.
+                                </li>
+                                <li>
+                                    <mark>useragernt.os</mark> Sistema operativo del usuario.
+                                </li>
+                                <li>
+                                    <mark>useragernt.name</mark> Nombre del navegador utilizado.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            El campo <mark>bytes</mark> es usado para almacenar el numero de bytes que han sido usados para procesar la petición del usuario.
+                        </li>
+                        <li>
+                            El campo <mark>clientip</mark> es la ip del usuario que accedió al website. Basado en este campo, es posible conocer información georeferenciada del usuario:
+                            <ul>
+                                <li>
+                                    <mark>geoip.coordinates</mark> coordenadas geograficas del usuario.
+                                </li>
+                                <li>
+                                    <mark>geoip.location</mark> Sistema operativo del usuario.
+                                </li>
+                                <li>
+                                    También hay información sobre la geo localización del usuario como el origen de la petición en <mark> geo.src </mark> y destino <mark> geo.dest </mark>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            El campo <mark>referrer</mark> indica como el usuario llegó al website.
+                        </li>
+                        <li>
+                            El campo <mark>request</mark> contiene información relativa a qué fue lo que el usuario solicitó en la petición. Para resumir, el valor de este campo es la URL
+                            solicitada por el usuario.
+                        </li>
+                    </ul>
                 </li>
                 <li>
-                    Seleccione <strong>Create visualization</strong>:
+                    Ahora vamos a crear una visualización que va a representar la cantidad de logs por cada tipo de <mark>response</mark>:
                     <br>
                     <br>
-                    <div class="cont-cent">
-                        <img src="./14.png" alt="">
-                    </div>
+                    <ul>
+                        <li>
+                            De click en el modulo de "Visualize" en el menú de navegación y cree una nueva visualización de tipo <strong>Time Series Visual Builder</strong>.
+                            Asegúrese que la visualización esté mostrando gráficas de barras en vez de lineales en <strong>Data</strong> > <strong>Options</strong> > <strong>Chart Type</strong>.
+                            Cambia al menú de <strong>Panel Options</strong>, en la parte derecha cambia el intervalo de auto a 1y. Para el index pattern, cambia * por <mark>apachelogs*</mark>.
+                        </li>
+                        <li>
+                            Para subdividir cada barra por codigo de respuesta, regrese al manú de Metrics. En el option list de <strong>Group By</strong>, cambie el valor Everything por Terms.
+                            En la opción <strong>By</strong> escoja el campo <mark>response</mark>. El resutado de esta operación mostrará cada barra dividida en distintos tonos de verde. 
+                            Se puede escoger otro color, como por ejemplo naranja:
+                        </li>
+                        <li>
+                            En vez de colorear las barras en distintos tonos del mismo color, es posible dividir la gráfica en diferentes colores, dependiendo del codigo de respuesta.
+                            Regrese nuevamente al menú de Options y cambié el valor de Split Color Theme de Gradient a Rainbow.
+                        </li>
+                        <li>
+                            Guarde la visualización.
+                        </li>
+
+                    </ul>
                 </li>
             </ol>
         </div>
