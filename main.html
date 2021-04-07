@@ -1130,6 +1130,83 @@
                         <img src="./14.png" alt="">
                     </div>
                 </li>
+                <li>
+                    Seleccione <strong>Create visualization</strong>:
+                    <br>
+                    <br>
+                    <div class="cont-cent">
+                        <img src="./14.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    Seleccione <strong>TSVB</strong>:
+                    <br>
+                    <br>
+                    <div class="cont-cent">
+                        <img src="./41.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    Seleccione <strong>Markdown</strong>:
+                    <br>
+                    <br>
+                    <div class="cont-cent">
+                        <img src="./42.png" alt="" width="100%">
+                    </div>
+                </li>
+                <li>
+                    Añada el siguiente contenido a la visualización de <strong>Markdown</strong>:
+                    <br>
+                    <br>
+                    <div class="cont-left code" >
+                        # Supervisión de vuelos
+                        <br>
+                        ### Cantidad de vuelos:
+                        <br>
+                        ### Distancia total de vuelos en Kilometros:
+                        <br>
+                        ### Ciudades mas visitadas:
+                    </div>
+                </li>
+                <li>
+                    Seleccione <strong>kibana_sample_data_flights</strong> como index pattern:
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="44">
+                        <img src="./43.png" alt="">
+                    </div>
+                    <button id="btn44" onclick="alterAnswer(44)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Cree la metrica de cantidad de vuelos y añada el valor a la visualización:
+                    <br>
+                    <br>
+                    <div class="hide-answer" id="45">
+                        <div class="cont-cent" >
+                            <img src="./44.png" alt="" style="width: 100%;">
+                        </div>
+                        <br>
+                        <div class="cont-left code" >
+                            ### Cantidad de vuelos: {{ count.cantidad_vuelos.last.raw }}
+                        </div>
+                    </div>
+                    <button id="btn45" onclick="alterAnswer(45)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Cree la metrica de cantidad de vuelos y añada el valor a la visualización:
+                    <br>
+                    <br>
+                    <div class="hide-answer" id="46">
+                        <div class="cont-cent" >
+                            <img src="./45.png" alt="" style="width: 100%;">
+                        </div>
+                        <br>
+                        <div class="cont-left code" >
+                            ### Distancia total de vuelos en Kilometros: {{ sum_of_distance_kilometers.distancia_km.last.formatted }}
+                        </div>
+                    </div>
+                    <button id="btn46" onclick="alterAnswer(46)">Mostrar respuesta</button>
+                </li>
             </ol>
         </div>
     </section>
