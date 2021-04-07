@@ -133,7 +133,7 @@
                     <a href="#lab7">Lab 7: Behind the Visualizations</a>
                 </li>
                 <li>
-                    <a href="">Lab 8: More Types of Visualizations</a>
+                    <a href="#lab8">Lab 8: More Types of Visualizations</a>
                 </li>
                 <li>
                     <a href="">Lab 9: Improving Visualizations</a>
@@ -780,6 +780,94 @@
                         <img src="./29.png" alt="">
                     </div>
                     <button id="btn34" onclick="alterAnswer(34)">Mostrar respuesta</button>
+                </li>
+            </ol>
+        </div>
+    </section>
+    <section id="lab8">
+        <div class="title" style="margin-top: 0;">
+            <label for="">Lab 8: More Types of Visualizations</label>
+        </div>
+        <div class="cont-left">
+            <label><strong>Objetivo:</strong> El objetivo de este laboratorio es entender el funcionamiento de las visualizaciónes de Kibana
+        </div>
+        <div class="cont-left">
+            <ol>
+                <li>
+                    Ingrese a la sección de <strong>Visualize Library</strong> en el menú lateral izquierdo:
+                    <br>
+                    <br>
+                    <div class="cont-cent">
+                        <img src="./13.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    Seleccione <strong>Create visualization</strong>:
+                    <br>
+                    <br>
+                    <div class="cont-cent">
+                        <img src="./14.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    Seleccione <strong>Agregation based</strong>:
+                    <br>
+                    <br>
+                    <div class="cont-cent">
+                        <img src="./24.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    Seleccione <strong>Table</strong>:
+                    <br>
+                    <br>
+                    <div class="cont-cent">
+                        <img src="./30.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    Seleccione el index pattern <strong>kibana_sample_data_flights</strong>:
+                    <br>
+                    <br>
+                    <div class="cont-cent">
+                        <img src="./26.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    Cree una visualización de tipo <strong>Table</strong> que permita ver el top 10 de la duracion promedio de los vuelos (<strong>FlightTimeMin</strong>) por ciudad de destino (<strong>DestCityName</strong>) 
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="35">
+                        <img src="./31.png" alt="">
+                    </div>
+                    <button id="btn35" onclick="alterAnswer(35)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Añada una tercera columna que muestre el precio promedio del tiquete (<strong>AvgTicketPrice</strong>)
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="36">
+                        <img src="./32.png" alt="">
+                    </div>
+                    <button id="btn36" onclick="alterAnswer(36)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Cree una visualización de tipo <strong>Tag Cloud</strong> con las 50 ciudades mas visitadas
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="37">
+                        <img src="./33.png" alt="">
+                    </div>
+                    <button id="btn37" onclick="alterAnswer(37)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Modifique la visualización que creo en el punto anterior para que ahora muestre los 50 destinos a los que mas tiempo se ha gastado viajando (<strong>FlightTimeMin</strong>)
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="38">
+                        <img src="./34.png" alt="">
+                    </div>
+                    <button id="btn38" onclick="alterAnswer(38)">Mostrar respuesta</button>
                 </li>
             </ol>
         </div>
