@@ -1779,6 +1779,118 @@
         </div>
         <div class="cont-left">
             <ol>
+                <li>
+                    Dirijase al módulo de Visualization y busque la visualización llamada: <strong>[Flights] Delays & Cancellations.</strong>
+                    <br>
+                    <br>
+                </li>
+                <li>
+                    ¿Qué información está brindando la visualización?
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="77">
+                        Está mostrando el ratio de vuelos retrasados en porcentaje y los eventos en los que un vuelo fue retrasado y cancelado. 
+                    </div>
+                    <button id="btn77" onclick="alterAnswer(77)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Ahora revisemos el dashboard llamado <strong>[Flights] Global Flight Dashboard.</strong> ¿Cuántas visualizaciones hay en el dashboard?
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="78">
+                        Hay 18 visualizaciones.
+                    </div>
+                    <button id="btn78" onclick="alterAnswer(78)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Ahora dirijase al módulo de Canvas y abra el canvas de vuelos ([Flights]). Ver distintas visualizaciones pre construidas de canvas es un excelente modo
+                    de entender cómo funciona este módulo. De click en <strong>Cancellations</strong> en el lado derecho de la presentación, después, deberías ver un panel que nuevo mostrandose. Da click 
+                    en el menú de data de este panel nuevo, ¿Qué query se está utilizando para crear la visualización?
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="79">
+                        SELECT COUNT(*) as total_cancellations
+                        FROM kibana_sample_data_flights
+                        WHERE Cancelled = true
+                    </div>
+                    <button id="btn79" onclick="alterAnswer(79)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Ahora que ya tiene un entendimiento de qué son logs y más especificamente, cómo funionan los logs de apache, vamos a intentar crear algunas visualizaciones
+                    para representar esta información. 
+                    <br>
+                    <br>
+                    <ul>
+                        <li>
+                            Cree una visualización que represente la cantidad de logs sobre el tiempo. Guarde la visualización y llámela <strong>visualization_1</strong>.
+                            <br>
+                            <br>
+                            <div class="cont-cent hide-answer" id="80">
+                                <img src="./16.1.png" alt="" style="width: 100%;">
+                                <img src="./16.2.png" alt="" style="width: 100%;">
+                                <img src="./16.3.png" alt="" style="width: 100%;">
+                                <img src="./16.4.png" alt="" style="width: 100%;">
+                                <img src="./16.5.png" alt="" style="width: 100%;">
+                            </div>
+                            <button id="btn80" onclick="alterAnswer(80)">Mostrar respuesta</button>
+                        </li>
+                        <li>
+                            Cree una visualización con dos metricas en ella.
+                            <br>
+                            <br>
+                            <ul>
+                                <li>
+                                    Promedio de bytes sobre el tiempo.
+                                </li>
+                                <li>
+                                    Suma de bytes sobre el tiempo.
+                                </li>
+                                <li>
+                                    Guarde la visualización y llámela <strong>visualization_2</strong>.
+                                </li>
+                            </ul>
+                            <br>
+                            <br>
+                            <div class="cont-cent hide-answer" id="81">
+                                <img src="./16.1.png" alt="" style="width: 100%;">
+                                <img src="./16.2.png" alt="" style="width: 100%;">
+                                <img src="./16.3.png" alt="" style="width: 100%;">
+                                <img src="./17.1.png" alt="" style="width: 100%;">
+                            </div>
+                            <button id="btn81" onclick="alterAnswer(81)">Mostrar respuesta</button>
+                        </li>
+                        <li>
+                            Cree dos mapas:
+                            <br>
+                            <br>
+                            <ul>
+                                <li>
+                                    Una visualización que represente los paises mas frecuentes en cuanto a logs.
+                                </li>
+                                <li>
+                                    Una visualización que represente los paises con el promedio más alto de bytes descargados.
+                                </li>
+                                <li>
+                                    Guarde las visualizaciones y llamelas respectivamente <strong>visualization_3</strong> y <strong>visualization_4</strong>.
+                                </li>
+                            </ul>
+                            <br>
+                            <br>
+                            <div class="cont-cent hide-answer" id="82">
+                                <img src="./16.6.png" alt="" style="width: 100%;">
+                                <img src="./16.7.png" alt="" style="width: 100%;">
+                                <img src="./16.8.png" alt="" style="width: 100%;">
+                                <img src="./16.9.png" alt="" style="width: 100%;">
+                                <br><br>
+                                Para crear el promedio, utilizar la siguiente configuración:
+                                <img src="./16.10.png" alt="" style="width: 100%;">
+                                <img src="./16.11.png" alt="" style="width: 100%;">
+
+                            </div>
+                            <button id="btn82" onclick="alterAnswer(82)">Mostrar respuesta</button>
+                        </li>
+                    </ul>
+                </li>
             </ol>
         </div>
     </section>
