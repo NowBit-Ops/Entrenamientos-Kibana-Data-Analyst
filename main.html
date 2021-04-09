@@ -19,7 +19,7 @@
             background-image: linear-gradient(to right, #66ccff, #006699, #66ccff);
         }
 
-        mark { 
+        mark {
             background-color: #ebebeb;
             color: #545454;
             padding: 0.25em;
@@ -155,22 +155,22 @@
                     <a href="#lab12">Lab 12: Visual Builder and other Visualizations</a>
                 </li>
                 <li>
-                    <a href="">Lab 13: Elastic Maps Service</a>
+                    <a href="#lab13">Lab 13: Elastic Maps Service</a>
                 </li>
                 <li>
-                    <a href="">Lab 14: Coordinates and Area Maps</a>
+                    <a href="#lab14">Lab 14: Coordinates and Area Maps</a>
                 </li>
                 <li>
-                    <a href="">Lab 15: Advanced Maps</a>
+                    <a href="#lab15">Lab 15: Advanced Maps</a>
                 </li>
                 <li>
-                    <a href="">Lab 16: A word on Datasets</a>
+                    <a href="#lab16">Lab 16: A word on Datasets</a>
                 </li>
                 <li>
-                    <a href="">Lab 17: Introduction to Dashboards</a>
+                    <a href="#lab17">Lab 17: Introduction to Dashboards</a>
                 </li>
                 <li>
-                    <a href="">Lab 18: Anomaly Hunt</a>
+                    <a href="#lab18">Lab 18: Anomaly Hunt</a>
                 </li>
                 <li>
                     <a href="">Lab 19: Canvas</a>
@@ -1004,19 +1004,24 @@
             <label for="">Lab 10: Introduction to TSVB</label>
         </div>
         <div class="cont-left">
-            <label><strong>Objetivo:</strong> En este laboratorio veremos cómo podemos usar el Time Series Visual Builder (TSVB), 
+            <label><strong>Objetivo:</strong> En este laboratorio veremos cómo podemos usar el Time Series Visual
+                Builder (TSVB),
                 para crear visualizaciones que representen series de tiempo.
         </div>
         <div class="cont-left">
             <ol>
                 <li>
                     Vaya al modulo de discover e intente ver los documentos.
-                    Los documentos pueden parecer extraños pero no hay por qué preocuparse, los vamos a analizar y entender.
+                    Los documentos pueden parecer extraños pero no hay por qué preocuparse, los vamos a analizar y
+                    entender.
                     Pero antes de todo, comprenderemos qué son los registros de apache.
-                    Cuando se tiene un sitio web (o cualquier aplicación web) es muy común tener lo que se llama un servidor web como Apache.
+                    Cuando se tiene un sitio web (o cualquier aplicación web) es muy común tener lo que se llama un
+                    servidor web como Apache.
                     El servidor web Apache ayudará a manejar y entregar páginas web a los usuarios.
-                    Este servidor Apache generará lo que llamamos logs, que son registros de los diferentes eventos que suceden en el servidor Apache.
-                    Un evento será, por ejemplo, que alguien acceda a una página web específica, más adelante veremos qué tipo de información se registra. 
+                    Este servidor Apache generará lo que llamamos logs, que son registros de los diferentes eventos que
+                    suceden en el servidor Apache.
+                    Un evento será, por ejemplo, que alguien acceda a una página web específica, más adelante veremos
+                    qué tipo de información se registra.
                     Normalmente, así es como se implementa:
                     <br>
                     <br>
@@ -1028,21 +1033,28 @@
                     <br>
                     <ul>
                         <li>
-                            Empecemos con <mark>@timestamp</mark>, este campo es simplemente la fecha de cuando sucedió el evento.
+                            Empecemos con <mark>@timestamp</mark>, este campo es simplemente la fecha de cuando sucedió
+                            el evento.
                         </li>
                         <li>
-                            Los que comienzan por <mark>_</mark> son lo que llamamos campos de metadatos, por ejemlo dentro de estos se encuentra el id, nombre del indice, etc.
+                            Los que comienzan por <mark>_</mark> son lo que llamamos campos de metadatos, por ejemlo
+                            dentro de estos se encuentra el id, nombre del indice, etc.
                         </li>
                         <li>
-                            El campo <mark>agent</mark> contiene lo que se llama el agente del usuario. Cuando alguien está navegando en internet, es muy util para el servidor web
-                            saber que tipo de navegador está usando el usuario para adaptar su contenido. Así que se verán datos como: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0
-                            este agente de usuario quiere decir que alguien está accediendo a la página a través de Firefox en Windows 7. Como se puede evidenciar, 
-                            este campo no es tan fácil de leer. Por lo tanto, es posible transformarlo para extraer más información: 
+                            El campo <mark>agent</mark> contiene lo que se llama el agente del usuario. Cuando alguien
+                            está navegando en internet, es muy util para el servidor web
+                            saber que tipo de navegador está usando el usuario para adaptar su contenido. Así que se
+                            verán datos como: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0
+                            este agente de usuario quiere decir que alguien está accediendo a la página a través de
+                            Firefox en Windows 7. Como se puede evidenciar,
+                            este campo no es tan fácil de leer. Por lo tanto, es posible transformarlo para extraer más
+                            información:
                             <br>
                             <br>
                             <ul>
                                 <li>
-                                    <mark>useragent.device</mark> Tipo de dispositivo que el usuario usó para acceder al sitio.
+                                    <mark>useragent.device</mark> Tipo de dispositivo que el usuario usó para acceder al
+                                    sitio.
                                 </li>
                                 <li>
                                     <mark>useragernt.os</mark> Sistema operativo del usuario.
@@ -1053,10 +1065,12 @@
                             </ul>
                         </li>
                         <li>
-                            El campo <mark>bytes</mark> es usado para almacenar el numero de bytes que han sido usados para procesar la petición del usuario.
+                            El campo <mark>bytes</mark> es usado para almacenar el numero de bytes que han sido usados
+                            para procesar la petición del usuario.
                         </li>
                         <li>
-                            El campo <mark>clientip</mark> es la ip del usuario que accedió al website. Basado en este campo, es posible conocer información georeferenciada del usuario:
+                            El campo <mark>clientip</mark> es la ip del usuario que accedió al website. Basado en este
+                            campo, es posible conocer información georeferenciada del usuario:
                             <ul>
                                 <li>
                                     <mark>geoip.coordinates</mark> coordenadas geograficas del usuario.
@@ -1065,7 +1079,8 @@
                                     <mark>geoip.location</mark> Sistema operativo del usuario.
                                 </li>
                                 <li>
-                                    También hay información sobre la geo localización del usuario como el origen de la petición en <mark> geo.src </mark> y destino <mark> geo.dest </mark>
+                                    También hay información sobre la geo localización del usuario como el origen de la
+                                    petición en <mark> geo.src </mark> y destino <mark> geo.dest </mark>
                                 </li>
                             </ul>
                         </li>
@@ -1073,29 +1088,38 @@
                             El campo <mark>referrer</mark> indica como el usuario llegó al website.
                         </li>
                         <li>
-                            El campo <mark>request</mark> contiene información relativa a qué fue lo que el usuario solicitó en la petición. Para resumir, el valor de este campo es la URL
+                            El campo <mark>request</mark> contiene información relativa a qué fue lo que el usuario
+                            solicitó en la petición. Para resumir, el valor de este campo es la URL
                             solicitada por el usuario.
                         </li>
                     </ul>
                 </li>
                 <li>
-                    Ahora vamos a crear una visualización que va a representar la cantidad de logs por cada tipo de <mark>response</mark>:
+                    Ahora vamos a crear una visualización que va a representar la cantidad de logs por cada tipo de
+                    <mark>response</mark>:
                     <br>
                     <br>
                     <ul>
                         <li>
-                            De click en el modulo de "Visualize" en el menú de navegación y cree una nueva visualización de tipo <strong>Time Series Visual Builder</strong>.
-                            Asegúrese que la visualización esté mostrando gráficas de barras en vez de lineales en <strong>Data</strong> > <strong>Options</strong> > <strong>Chart Type</strong>.
-                            Cambia al menú de <strong>Panel Options</strong>, en la parte derecha cambia el intervalo de auto a 1y. Para el index pattern, cambia * por <mark>apachelogs*</mark>.
+                            De click en el modulo de "Visualize" en el menú de navegación y cree una nueva visualización
+                            de tipo <strong>Time Series Visual Builder</strong>.
+                            Asegúrese que la visualización esté mostrando gráficas de barras en vez de lineales en
+                            <strong>Data</strong> > <strong>Options</strong> > <strong>Chart Type</strong>.
+                            Cambia al menú de <strong>Panel Options</strong>, en la parte derecha cambia el intervalo de
+                            auto a 1y. Para el index pattern, cambia * por <mark>apachelogs*</mark>.
                         </li>
                         <li>
-                            Para subdividir cada barra por codigo de respuesta, regrese al manú de Metrics. En el option list de <strong>Group By</strong>, cambie el valor Everything por Terms.
-                            En la opción <strong>By</strong> escoja el campo <mark>response</mark>. El resutado de esta operación mostrará cada barra dividida en distintos tonos de verde. 
+                            Para subdividir cada barra por codigo de respuesta, regrese al manú de Metrics. En el option
+                            list de <strong>Group By</strong>, cambie el valor Everything por Terms.
+                            En la opción <strong>By</strong> escoja el campo <mark>response</mark>. El resutado de esta
+                            operación mostrará cada barra dividida en distintos tonos de verde.
                             Se puede escoger otro color, como por ejemplo naranja:
                         </li>
                         <li>
-                            En vez de colorear las barras en distintos tonos del mismo color, es posible dividir la gráfica en diferentes colores, dependiendo del codigo de respuesta.
-                            Regrese nuevamente al menú de Options y cambié el valor de Split Color Theme de Gradient a Rainbow.
+                            En vez de colorear las barras en distintos tonos del mismo color, es posible dividir la
+                            gráfica en diferentes colores, dependiendo del codigo de respuesta.
+                            Regrese nuevamente al menú de Options y cambié el valor de Split Color Theme de Gradient a
+                            Rainbow.
                         </li>
                         <li>
                             Guarde la visualización.
@@ -1161,7 +1185,7 @@
                     Añada el siguiente contenido a la visualización de <strong>Markdown</strong>:
                     <br>
                     <br>
-                    <div class="cont-left code" >
+                    <div class="cont-left code">
                         # Supervisión de vuelos
                         <br>
                         ### Cantidad de vuelos:
@@ -1185,11 +1209,11 @@
                     <br>
                     <br>
                     <div class="hide-answer" id="45">
-                        <div class="cont-cent" >
+                        <div class="cont-cent">
                             <img src="./44.png" alt="" style="width: 100%;">
                         </div>
                         <br>
-                        <div class="cont-left code" >
+                        <div class="cont-left code">
                             ### Cantidad de vuelos: {{ count.cantidad_vuelos.last.raw }}
                         </div>
                     </div>
@@ -1200,12 +1224,13 @@
                     <br>
                     <br>
                     <div class="hide-answer" id="46">
-                        <div class="cont-cent" >
+                        <div class="cont-cent">
                             <img src="./45.png" alt="" style="width: 100%;">
                         </div>
                         <br>
-                        <div class="cont-left code" >
-                            ### Distancia total de vuelos en Kilometros: {{ sum_of_distance_kilometers.distancia_km.last.formatted }}
+                        <div class="cont-left code">
+                            ### Distancia total de vuelos en Kilometros:
+                            {{ sum_of_distance_kilometers.distancia_km.last.formatted }}
                         </div>
                     </div>
                     <button id="btn46" onclick="alterAnswer(46)">Mostrar respuesta</button>
@@ -1275,7 +1300,8 @@
                     <button id="btn47" onclick="alterAnswer(47)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Cree una visualización que muestre el top 10 de ciudades de origen (<strong>OriginCityName</strong>), segun cantidad de vuelos cancelados (<strong>Cancelled</strong>)
+                    Cree una visualización que muestre el top 10 de ciudades de origen
+                    (<strong>OriginCityName</strong>), segun cantidad de vuelos cancelados (<strong>Cancelled</strong>)
                     <br>
                     <br>
                     <div class="cont-cent hide-answer" id="48">
@@ -1333,7 +1359,8 @@
                     <button id="btn49" onclick="alterAnswer(49)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Cree una tabla que muestre la cantidad de documentos por las distintas aerolinas (<strong>Carrier</strong>)
+                    Cree una tabla que muestre la cantidad de documentos por las distintas aerolinas
+                    (<strong>Carrier</strong>)
                     <br>
                     <br>
                     <div class="cont-cent hide-answer" id="50">
@@ -1342,7 +1369,8 @@
                     <button id="btn50" onclick="alterAnswer(50)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Añada una columna que muestre la cantidad de km (<strong>DistanceKilometers</strong>) recorridos por esa aerolinea (<strong>Carrier</strong>)
+                    Añada una columna que muestre la cantidad de km (<strong>DistanceKilometers</strong>) recorridos por
+                    esa aerolinea (<strong>Carrier</strong>)
                     <br>
                     <br>
                     <div class="cont-cent hide-answer" id="51">
@@ -1351,7 +1379,8 @@
                     <button id="btn51" onclick="alterAnswer(51)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Añada una columna que muestre la cantidad total de dinero (<strong>AvgTicketPrice</strong>) obtenido por esa aerolinea (<strong>Carrier</strong>)
+                    Añada una columna que muestre la cantidad total de dinero (<strong>AvgTicketPrice</strong>) obtenido
+                    por esa aerolinea (<strong>Carrier</strong>)
                     <br>
                     <br>
                     <div class="cont-cent hide-answer" id="52">
@@ -1359,6 +1388,169 @@
                     </div>
                     <button id="btn52" onclick="alterAnswer(52)">Mostrar respuesta</button>
                 </li>
+            </ol>
+        </div>
+    </section>
+    <section id="lab13">
+        <div class="title" style="margin-top: 0;">
+            <label for="">Lab 13: Elastic Maps Service</label>
+        </div>
+        <div class="cont-left">
+            <label><strong>Objetivo:</strong> En este laboratorio, descubrirá el servicio de mapas Elastic. Es
+                importante conocer este servicio, ya que a menudo necesitará consultarlo para asegurarse de que sus
+                documentos contienen las claves adecuadas para mostrar el mapa correcto.
+        </div>
+        <div class="cont-left">
+            <ol>
+                <li>
+                    Ingrese a la sección de <strong>Maps</strong> en el menú lateral izquierdo:
+                    <br>
+                    <br>
+                    <div class="cont-cent">
+                        <img src="./51.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    Seleccione <strong>Create Map</strong>:
+                    <br>
+                    <br>
+                    <div class="cont-cent">
+                        <img src="./52.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    En el servicio de mapas de elastic hay dos categorías diferentes, capas vectoriales y capas de
+                    teselas. Las capas de mosaicos son la base del mapa, te muestra el mapa del mundo, los diferentes
+                    países, calles, restaurantes, bares, etc. una capa de mosaico sería una colección de imágenes
+                    estáticas que forman un "mosaico" en la cuadrícula para hacer una imagen coherente. Acerque y aleje
+                    el
+                    mapa para ver tu vecindario y ver qué tan preciso es el mapa.
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="53">
+                        <img src="./53.png" alt="">
+                    </div>
+                    <button id="btn53" onclick="alterAnswer(53)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Mueva el mapa y enfoque Estados Unidos, ahora haga lo mismo con Colombia. ¿Qué diferencias a nivel
+                    de información que provee el mapa hay? 
+                    <br>
+                    <br>
+                    <div class="cont-left hide-answer" id="54">
+                        Estados unidos cuenta con la division politica por Estados
+                    </div>
+                    <button id="btn54" onclick="alterAnswer(54)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Añada una nueva capa con un mapa base desaturado
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="55">
+                        <img src="./54.png" alt="" >
+                    </div>
+                    <button id="btn55" onclick="alterAnswer(55)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Haga que la capa base de mapa desaturado solo sea visible entre los zooms 8 y 24
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="56">
+                        <img src="./55.png" alt="" >
+                    </div>
+                    <button id="btn56" onclick="alterAnswer(56)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Haga zom suficiente para que se vea la capa <strong>Road map - Desaturated</strong> en ese momento mueva la capa <strong>Road map</strong> a la parte superior
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="57">
+                        <img src="./56.png" alt="" >
+                    </div>
+                    <button id="btn57" onclick="alterAnswer(57)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Elimine ambas capas.
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="58">
+                        <img src="./57.png" alt="" >
+                    </div>
+                    <button id="btn58" onclick="alterAnswer(58)">Mostrar respuesta</button>
+                </li>
+            </ol>
+        </div>
+    </section>
+    <section id="lab14">
+        <div class="title" style="margin-top: 0;">
+            <label for="">Lab 14: Coordinates and Area Maps</label>
+        </div>
+        <div class="cont-left">
+            <label><strong>Objetivo:</strong> En este laboratorio, aprenderá lo fácil que es crear una capa de mapa en
+                la aplicación de mapas. Va a crear documentos, cuadrículas, límites administrativos y visualizaciones
+                punto a punto.
+        </div>
+        <div class="cont-left">
+            <ol>
+            </ol>
+        </div>
+    </section>
+    <section id="lab15">
+        <div class="title" style="margin-top: 0;">
+            <label for="">Lab 15: Advanced Maps</label>
+        </div>
+        <div class="cont-left">
+            <label><strong>Objetivo:</strong> Esta lección tratará sobre la personalización de mapas. Vamos a crear un
+                mapa que contiene muchas capas diferentes. Algunas capas aparecerán al hacer zoom en el mapa y otras
+                desaparecerán. También indexará sus propias formas en Elasticsearch y verá cómo se pueden mostrar estas
+                formas en la aplicación de mapas.
+        </div>
+        <div class="cont-left">
+            <ol>
+            </ol>
+        </div>
+    </section>
+    <section id="lab16">
+        <div class="title" style="margin-top: 0;">
+            <label for="">Lab 16: A word on Datasets</label>
+        </div>
+        <div class="cont-left">
+            <label><strong>Objetivo:</strong> En este laboratorio, veremos cómo puede importar datos en Elasticsearch a
+                través de Kibana. También vamos a descubrir qué elementos se envían con los conjuntos de datos
+                precargados. También vamos a descubrir el conjunto de datos de apachelogs usando la visualización y la
+                interfaz de descubrimiento.
+        </div>
+        <div class="cont-left">
+            <ol>
+            </ol>
+        </div>
+    </section>
+    <section id="lab17">
+        <div class="title" style="margin-top: 0;">
+            <label for="">Lab 17: Introduction to Dashboards</label>
+        </div>
+        <div class="cont-left">
+            <label><strong>Objetivo:</strong> En este lab, crearemos visualizaciones adicionales para el Dashboard y
+                luego
+                exploraremos las diferentes cosas que se pueden hacer en un Dashboard (cómo compartirlo, cómo
+                insertarlo,
+                etc.)
+        </div>
+        <div class="cont-left">
+            <ol>
+            </ol>
+        </div>
+    </section>
+    <section id="lab18">
+        <div class="title" style="margin-top: 0;">
+            <label for="">Lab 18: Anomaly Hunt</label>
+        </div>
+        <div class="cont-left">
+            <label><strong>Objetivo:</strong> En este laboratorio, veremos cómo podemos usar un tablero para buscar
+                anomalías en nuestros datos. Si no tuvo tiempo de terminar su tablero, puede encontrar el tablero aquí.
+        </div>
+        <div class="cont-left">
+            <ol>
             </ol>
         </div>
     </section>
