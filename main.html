@@ -52,6 +52,14 @@
             border-color: #006699;
             background-color: #E5E8E8;
         }
+        img {
+            font-family: Consolas;
+            font-size: 18px;
+            color: #fff;
+            border-width: 15px;
+            border-style: solid;
+            border-color: #d6d6d6;
+        }
 
         .hide-answer {
             display: none;
@@ -111,7 +119,7 @@
     </script>
     <section>
         <div class="cont-cent" style="margin-bottom: 0;">
-            <img src="./Logo 1 letra negra.png" style="width: 20em;">
+            <img src="./Logo 1 letra negra.png" style="width: 20em; border-width: 0px;">
         </div>
         <div class="title" style="margin-top: 0;">
             <label for="">Guia de Laboratorios: Entrenamientos de Kibana</label>
@@ -1791,7 +1799,7 @@
                     ¿Qué información está brindando la visualización?
                     <br>
                     <br>
-                    <div class="cont-cent hide-answer" id="77">
+                    <div class="cont-left hide-answer" id="77">
                         Está mostrando el ratio de vuelos retrasados en porcentaje y los eventos en los que un vuelo fue retrasado y cancelado. 
                     </div>
                     <button id="btn77" onclick="alterAnswer(77)">Mostrar respuesta</button>
@@ -1800,7 +1808,7 @@
                     Ahora revisemos el dashboard llamado <strong>[Flights] Global Flight Dashboard.</strong> ¿Cuántas visualizaciones hay en el dashboard?
                     <br>
                     <br>
-                    <div class="cont-cent hide-answer" id="78">
+                    <div class="cont-left hide-answer" id="78">
                         Hay 18 visualizaciones.
                     </div>
                     <button id="btn78" onclick="alterAnswer(78)">Mostrar respuesta</button>
@@ -1811,7 +1819,7 @@
                     en el menú de data de este panel nuevo, ¿Qué query se está utilizando para crear la visualización?
                     <br>
                     <br>
-                    <div class="cont-cent hide-answer" id="79">
+                    <div class="cont-left hide-answer" id="79">
                         SELECT COUNT(*) as total_cancellations
                         FROM kibana_sample_data_flights
                         WHERE Cancelled = true
@@ -1829,11 +1837,11 @@
                             <br>
                             <br>
                             <div class="cont-cent hide-answer" id="80">
-                                <img src="./16.1.png" alt="" style="width: 100%;">
-                                <img src="./16.2.png" alt="" style="width: 100%;">
-                                <img src="./16.3.png" alt="" style="width: 100%;">
-                                <img src="./16.4.png" alt="" style="width: 100%;">
-                                <img src="./16.5.png" alt="" style="width: 100%;">
+                                <img src="./16.1.png" alt="">
+                                <img src="./16.2.png" alt="">
+                                <img src="./16.3.png" alt="">
+                                <img src="./16.4.png" alt="">
+                                <img src="./16.5.png" alt="">
                             </div>
                             <button id="btn80" onclick="alterAnswer(80)">Mostrar respuesta</button>
                         </li>
@@ -1853,10 +1861,10 @@
                                     <br>
                                     <br>
                                     <div class="cont-cent hide-answer" id="81">
-                                        <img src="./16.1.png" alt="" style="width: 100%;">
-                                        <img src="./16.2.png" alt="" style="width: 100%;">
-                                        <img src="./16.3.png" alt="" style="width: 100%;">
-                                        <img src="./17.1.png" alt="" style="width: 100%;">
+                                        <img src="./16.1.png" alt="">
+                                        <img src="./16.2.png" alt="">
+                                        <img src="./16.3.png" alt="">
+                                        <img src="./17.1.png" alt="">
                                     </div>
                                     <button id="btn81" onclick="alterAnswer(81)">Mostrar respuesta</button>
                                 </li>
@@ -1878,14 +1886,14 @@
                                     <br>
                                     <br>
                                     <div class="cont-cent hide-answer" id="82">
-                                        <img src="./16.6.png" alt="" style="width: 100%;">
-                                        <img src="./16.7.png" alt="" style="width: 100%;">
-                                        <img src="./16.8.png" alt="" style="width: 100%;">
-                                        <img src="./16.9.png" alt="" style="width: 100%;">
+                                        <img src="./16.6.png" alt="">
+                                        <img src="./16.7.png" alt="">
+                                        <img src="./16.8.png" alt="">
+                                        <img src="./16.9.png" alt="">
                                         <br><br>
                                         Para crear el promedio, utilizar la siguiente configuración:
-                                        <img src="./16.10.png" alt="" style="width: 100%;">
-                                        <img src="./16.11.png" alt="" style="width: 100%;">
+                                        <img src="./16.10.png" alt="">
+                                        <img src="./16.11.png" alt="">
 
                                     </div>
                                     <button id="btn82" onclick="alterAnswer(82)">Mostrar respuesta</button>
@@ -1916,10 +1924,10 @@
                     <br>
                     <br>
                     <div class="cont-cent hide-answer" id="83">
-                        <img src="./17.3.png" alt="" style="width: 100%;">
-                        <img src="./17.4.png" alt="" style="width: 100%;">
-                        <img src="./17.5.png" alt="" style="width: 100%;">
-                        <img src="./17.6.png" alt="" style="width: 100%;">
+                        <img src="./17.3.png" alt="">
+                        <img src="./17.4.png" alt="">
+                        <img src="./17.5.png" alt="">
+                        <img src="./17.6.png" alt="">
                     </div>
                     <button id="btn83" onclick="alterAnswer(83)">Mostrar respuesta</button>
                 </li>
@@ -1929,18 +1937,19 @@
                     <br>
                     <br>
                     <div class="cont-cent hide-answer" id="84">
-                        <img src="./17.7.png" alt="" style="width: 100%;">
+                        <img src="./17.7.png" alt="" >
                     </div>
                     <button id="btn84" onclick="alterAnswer(84)">Mostrar respuesta</button>
                 </li>
                 <li>
                     Cree una visualización de tipo markdown, llamada <strong>visualization_7</strong> que muestre lo siguiente: 
-                    <img src="./17.2.png" alt="" style="width: 100%;">
+                    <br>
+                    <img src="./17.2.png" alt="" style="width: 50%;" >
                     <br>
                     <br>
                     <div class="cont-cent hide-answer" id="85">
-                        <img src="./17.8.png" alt="" style="width: 100%;">
-                        <img src="./17.9.png" alt="" style="width: 100%;">
+                        <img src="./17.8.png" alt="" >
+                        <img src="./17.9.png" alt="" >
                     </div>
                     <button id="btn85" onclick="alterAnswer(85)">Mostrar respuesta</button>
                 </li>
@@ -1954,12 +1963,11 @@
                         <li>
                             Guarde el dashboard y llamelo: <strong>Apache logs dashboard</strong> 
                             <div class="cont-cent hide-answer" id="86">
-                                <img src="./17.10.png" alt="" style="width: 100%;">
-                                <img src="./17.12.png" alt="" style="width: 100%;">
-                                <img src="./17.11.png" alt="" style="width: 100%;">
-                                <img src="./17.13.png" alt="" style="width: 100%;">
-                                <img src="./17.14.png" alt="" style="width: 100%;">
-
+                                <img src="./17.10.png" alt="" >
+                                <img src="./17.12.png" alt="" >
+                                <img src="./17.11.png" alt="" >
+                                <img src="./17.13.png" alt="" >
+                                <img src="./17.14.png" alt="" >
                             </div>
                             <button id="btn86" onclick="alterAnswer(86)">Mostrar respuesta</button>
                         </li>
