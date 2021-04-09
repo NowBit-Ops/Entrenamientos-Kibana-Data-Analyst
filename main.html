@@ -1850,17 +1850,17 @@
                                 </li>
                                 <li>
                                     Guarde la visualización y llámela <strong>visualization_2</strong>.
+                                    <br>
+                                    <br>
+                                    <div class="cont-cent hide-answer" id="81">
+                                        <img src="./16.1.png" alt="" style="width: 100%;">
+                                        <img src="./16.2.png" alt="" style="width: 100%;">
+                                        <img src="./16.3.png" alt="" style="width: 100%;">
+                                        <img src="./17.1.png" alt="" style="width: 100%;">
+                                    </div>
+                                    <button id="btn81" onclick="alterAnswer(81)">Mostrar respuesta</button>
                                 </li>
                             </ul>
-                            <br>
-                            <br>
-                            <div class="cont-cent hide-answer" id="81">
-                                <img src="./16.1.png" alt="" style="width: 100%;">
-                                <img src="./16.2.png" alt="" style="width: 100%;">
-                                <img src="./16.3.png" alt="" style="width: 100%;">
-                                <img src="./17.1.png" alt="" style="width: 100%;">
-                            </div>
-                            <button id="btn81" onclick="alterAnswer(81)">Mostrar respuesta</button>
                         </li>
                         <li>
                             Cree dos mapas:
@@ -1875,22 +1875,22 @@
                                 </li>
                                 <li>
                                     Guarde las visualizaciones y llamelas respectivamente <strong>visualization_3</strong> y <strong>visualization_4</strong>.
+                                    <br>
+                                    <br>
+                                    <div class="cont-cent hide-answer" id="82">
+                                        <img src="./16.6.png" alt="" style="width: 100%;">
+                                        <img src="./16.7.png" alt="" style="width: 100%;">
+                                        <img src="./16.8.png" alt="" style="width: 100%;">
+                                        <img src="./16.9.png" alt="" style="width: 100%;">
+                                        <br><br>
+                                        Para crear el promedio, utilizar la siguiente configuración:
+                                        <img src="./16.10.png" alt="" style="width: 100%;">
+                                        <img src="./16.11.png" alt="" style="width: 100%;">
+
+                                    </div>
+                                    <button id="btn82" onclick="alterAnswer(82)">Mostrar respuesta</button>
                                 </li>
                             </ul>
-                            <br>
-                            <br>
-                            <div class="cont-cent hide-answer" id="82">
-                                <img src="./16.6.png" alt="" style="width: 100%;">
-                                <img src="./16.7.png" alt="" style="width: 100%;">
-                                <img src="./16.8.png" alt="" style="width: 100%;">
-                                <img src="./16.9.png" alt="" style="width: 100%;">
-                                <br><br>
-                                Para crear el promedio, utilizar la siguiente configuración:
-                                <img src="./16.10.png" alt="" style="width: 100%;">
-                                <img src="./16.11.png" alt="" style="width: 100%;">
-
-                            </div>
-                            <button id="btn82" onclick="alterAnswer(82)">Mostrar respuesta</button>
                         </li>
                     </ul>
                 </li>
@@ -1904,12 +1904,81 @@
         <div class="cont-left">
             <label><strong>Objetivo:</strong> En este lab, crearemos visualizaciones adicionales para el Dashboard y
                 luego
-                exploraremos las diferentes cosas que se pueden hacer en un Dashboard (cómo compartirlo, cómo
+                exploraremos las diferentes cosas que se pueden hacer en un Dashboard (cómo compartirlo,
                 insertarlo,
                 etc.)
         </div>
         <div class="cont-left">
             <ol>
+                <li>
+                    Vamos a crear más visualización sobre el index pattern <strong>kibana_sample_data_logs</strong>. Cree una visualización de barras horizontal que muestre
+                    el <mark>agente</mark> más frecuente.
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="83">
+                        <img src="./17.3.png" alt="" style="width: 100%;">
+                        <img src="./17.4.png" alt="" style="width: 100%;">
+                        <img src="./17.5.png" alt="" style="width: 100%;">
+                        <img src="./17.6.png" alt="" style="width: 100%;">
+                        <img src="./17.7.png" alt="" style="width: 100%;">
+                    </div>
+                    <button id="btn83" onclick="alterAnswer(83)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Del mismo modo, cree una visualización de barras horizontal que muestre las direcciones IP más frecuentes (<mark>clientip.keyword</mark>). Llámela 
+                    <strong>visualization_6</strong>
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="84">
+                        <img src="./17.3.png" alt="" style="width: 100%;">
+                        <img src="./17.4.png" alt="" style="width: 100%;">
+                        <img src="./17.5.png" alt="" style="width: 100%;">
+                        <img src="./17.6.png" alt="" style="width: 100%;">
+                        <img src="./17.7.png" alt="" style="width: 100%;">
+                    </div>
+                    <button id="btn84" onclick="alterAnswer(84)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Cree una visualización de tipo markdown, llamada <strong>visualization_7</strong> que muestre lo siguiente: 
+                    <img src="./17.2.png" alt="" style="width: 100%;">
+                    <br>
+                    <br>
+                </li>
+                <li>
+                    Ahora pongamos todo junto:
+                    <ul>
+                        <li>
+                            Cree un dashboard y añada todas las visualizaciones que acaba de crear.
+                        </li>
+                        <li>
+                            Guarde el dashboard y llamelo: <strong>Apache logs dashboard</strong> 
+                        </li>
+                    </ul>
+                    <br>
+                    <br>
+                </li>
+                <li>
+                    Ahora que el dashboard existe, compartamoslo con otros usuarios:
+                    <ul>
+                        <li>
+                            Cuando se habla de compartir, hay dos opciones:
+                            <ul>
+                                <li>
+                                    Embedded code (iframe).
+                                </li>
+                                <li>
+                                    Permalink.
+                                </li>
+                                Escoja el permalink.
+                            </ul>
+                        </li>
+                        <li>
+                            Seleccione saved object, copie el enlace y envíeselo a alguien.
+                        </li>
+                    </ul>
+                    <br>
+                    <br>
+                </li>
             </ol>
         </div>
     </section>
