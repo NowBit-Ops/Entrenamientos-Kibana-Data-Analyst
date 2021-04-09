@@ -1575,6 +1575,195 @@
         </div>
         <div class="cont-left">
             <ol>
+                <li>
+                    Ingrese a la sección de <strong>Maps</strong> en el menú lateral izquierdo:
+                    <br>
+                    <br>
+                    <div class="cont-cent">
+                        <img src="./51.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    Seleccione <strong>Create Map</strong>:
+                    <br>
+                    <br>
+                    <div class="cont-cent">
+                        <img src="./52.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    Seleccione el rango de tiempo de la ultima semana
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="64">
+                        <img src="./9.png" alt="">
+                    </div>
+                    <button id="btn64" onclick="alterAnswer(64)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Añada una capa de tipo <strong>EMS Boundaries</strong> que cumpla las siguientes condiciones:
+                    <ul>
+                        <li>
+                            Usar la capa <strong>World Countries</strong>
+                            <br>
+                            <div class="cont-cent hide-answer" id="65">
+                                <img src="./62.png" alt="">
+                            </div>
+                            <button id="btn65" onclick="alterAnswer(65)">Mostrar respuesta</button>
+                        </li>
+                        <li>
+                            Los campos Tooltips deben ser de tipo <strong>ISO 3166-1 alpha-2 code</strong>
+                            <br>
+                            <div class="cont-cent hide-answer" id="66">
+                                <img src="./63.png" alt="">
+                            </div>
+                            <button id="btn66" onclick="alterAnswer(66)">Mostrar respuesta</button>
+                        </li>
+                        <li>
+                            Cree un Join con las sisguientes caractersicas
+                            <ul>
+                                <li>
+                                    Left source: World Countries
+                                </li>
+                                <li>
+                                    Left field: ISO 3166-1 alpha-2 code
+                                </li>
+                                <li>
+                                    Rigth source: kibana_sample_data_ecommerce
+                                </li>
+                                <li>
+                                    Rigth field: geoip.country_iso_code
+                                </li>
+                                <li>
+                                    Rigth size: 65535
+                                </li>
+                            </ul>
+                            <br>
+                            <div class="cont-cent hide-answer" id="67">
+                                <img src="./64.png" alt="">
+                            </div>
+                            <button id="btn67" onclick="alterAnswer(67)">Mostrar respuesta</button>
+                        </li>
+                        <li>
+                            Haga que el <strong>Fill Color</strong> sea determinado por valor usando el Count de
+                            registros. Use colores desde el azul al rojo
+                            <br>
+                            <div class="cont-cent hide-answer" id="68">
+                                <img src="./65.png" alt="">
+                            </div>
+                            <button id="btn68" onclick="alterAnswer(68)">Mostrar respuesta</button>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Añada una capa de tipo <strong>EMS Boundaries</strong> que cumpla las siguientes condiciones:
+                    <ul>
+                        <li>
+                            Usar la capa <strong>USA States</strong>
+                            <br>
+                            <div class="cont-cent hide-answer" id="69">
+                                <img src="./66.png" alt="">
+                            </div>
+                            <button id="btn69" onclick="alterAnswer(69)">Mostrar respuesta</button>
+                        </li>
+                        <li>
+                            Los campos Tooltips deben ser de tipo <strong>name</strong>
+                            <br>
+                            <div class="cont-cent hide-answer" id="70">
+                                <img src="./67.png" alt="">
+                            </div>
+                            <button id="btn70" onclick="alterAnswer(70)">Mostrar respuesta</button>
+                        </li>
+                        <li>
+                            Cree un Join con las sisguientes caractersicas
+                            <ul>
+                                <li>
+                                    Left source: USA States
+                                </li>
+                                <li>
+                                    Left field: name
+                                </li>
+                                <li>
+                                    Rigth source: kibana_sample_data_ecommerce
+                                </li>
+                                <li>
+                                    Rigth field: geoip.region_name
+                                </li>
+                                <li>
+                                    Rigth size: 65535
+                                </li>
+                            </ul>
+                            <br>
+                            <div class="cont-cent hide-answer" id="71">
+                                <img src="./68.png" alt="">
+                            </div>
+                            <button id="btn71" onclick="alterAnswer(71)">Mostrar respuesta</button>
+                        </li>
+                        <li>
+                            Haga que el <strong>Fill Color</strong> sea determinado por valor usando el Count de
+                            registros. Use gamas de azul como color
+                            <br>
+                            <div class="cont-cent hide-answer" id="72">
+                                <img src="./69.png" alt="">
+                            </div>
+                            <button id="btn72" onclick="alterAnswer(72)">Mostrar respuesta</button>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Añada una capa de tipo <strong>Cluster and grids</strong>
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="73">
+                        <img src="./70.png" alt="">
+                    </div>
+                    <button id="btn73" onclick="alterAnswer(73)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    seleccione como index pattern <strong>kibana_sample_data_ecommerce</strong> y como campo Geoespacial <strong>geoip.location</strong>
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="73">
+                        <img src="./70.png" alt="">
+                    </div>
+                    <button id="btn73" onclick="alterAnswer(73)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    seleccione como index pattern <strong>kibana_sample_data_ecommerce</strong> y como campo Geoespacial <strong>geoip.location</strong>
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="73">
+                        <img src="./70.png" alt="">
+                    </div>
+                    <button id="btn73" onclick="alterAnswer(73)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Añada una metrica de suma sobre el campo <strong>products.taxful_price</strong> con el nombre <strong>total sales price</strong>
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="74">
+                        <img src="./72.png" alt="">
+                    </div>
+                    <button id="btn74" onclick="alterAnswer(74)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Haga que el campo muestre el valor de <strong>total sales price</strong>
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="75">
+                        <img src="./73.png" alt="">
+                    </div>
+                    <button id="btn75" onclick="alterAnswer(75)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Cambie la opacidad al 100%
+                    <br>
+                    <br>
+                    <div class="cont-cent hide-answer" id="76">
+                        <img src="./74.png" alt="">
+                    </div>
+                    <button id="btn76" onclick="alterAnswer(76)">Mostrar respuesta</button>
+                </li>
             </ol>
         </div>
     </section>
