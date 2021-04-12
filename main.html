@@ -2363,13 +2363,13 @@
                 </li>
                 <li>
                     Seleccione la opcion <strong>Advandce</strong> dentro de el Bucket <strong>Date Histogram</strong>
-                    <div class="cont-cent" >
+                    <div class="cont-cent">
                         <img src="./89.png">
                     </div>
                 </li>
                 <li>
                     Pegue lo siguiente en el cuadro de texto <strong>JSON input</strong>:
-                    <div class="cont-left code" >
+                    <div class="cont-left code">
                         { "offset": "-1d" }
                     </div>
                     Tenga en cuenta que este es el parámetro que utilizó anteriormente, rodeado por dos llaves.
@@ -2393,6 +2393,70 @@
         </div>
         <div class="cont-left">
             <ol>
+                <li>
+                    Suponga que desea responder a la siguiente pregunta: ¿Cuándo acumuló más de 200.000 registros en
+                    nuestro conjunto de datos de registros de <strong>kibana_sample_data_logs</strong>? Para responder a
+                    esta pregunta, realice los siguientes pasos:
+                    <ul>
+                        <li>
+                            Cree un gráfico de barras verticales para el patrón de índice
+                            <strong>kibana_sample_data_logs</strong>
+                        </li>
+                        <li>
+                            En el eje X, cree un date Histogram con buckets diarios. Esta agregación muestra
+                            cuántos registros se enviaron diariamente, pero no responde a nuestra pregunta. Debe sumar
+                            todos los buckets hasta llegar a 200.000 documentos, lo que se puede hacer mediante una
+                            pipeline aggregation denominada <strong>Cumulative Sum</strong>.
+                        </li>
+                        <li>
+                            Guarde esta visualizacion, con el nombre <mark>cumulative_sum</mark>.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Suponga que desea una visualización que muestre la variación del número de registros recibidos a
+                    diario. Complete los siguientes pasos para crear esta visualización mediante la pipeline aggregation
+                    <strong>derivate</strong>:
+                    <ul>
+                        <li>
+                            Cree un nuevo gráfico de barras verticales con un date histogram diario en el eje X
+                        </li>
+                        <li>
+                            Cambie la metric aggregation en el eje Y a <strong>Derivate</strong>. Observe que el gráfico
+                            de barras ahora muestra la diferencia en el número de registros de un día a otro.
+                        </li>
+                        <li>
+                            Guarde la visualización, dándole el nombre <strong>derivate</strong>.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    La visualización <strong>derivate</strong> comparó los buckets con sus vecinos, lo que es una
+                    observación útil del día a día. Pero esos buckets solo se comparan con el dia siguiente, cuando lo
+                    ideal sería comparar los buckets de un día en particular de la semana, como comparar un lunes con el
+                    lunes siguiente. Para lograr esto, necesitará utilizar la pipeline aggregation <strong>Serial
+                        Diff</strong>:
+                    <ul>
+                        <li>
+                            Usando su visualización <strong>derivate</strong> del paso anterior, cambie la métrica a
+                            <strong>Serial Diff</strong> en la parte superior del recuento. ¿Hay alguna diferencia con
+                            la
+                            visualización <strong>derivate</strong>?
+                        </li>
+                        <li>
+                            Es posible definir un retraso cuando se trabaja con la agregación <strong>Serial
+                                Diff</strong>. Haga clic en <strong>Advance</strong> en <strong> Custom Label</strong>.
+                            Debería mostrar un cuadro de texto que se utiliza para
+                            definir parámetros que no forman parte de la interfaz de usuario. Va a agregar un parámetro
+                            de retraso. Escriba lo siguiente en el cuadro de texto: <mark>{"lag": 7}</mark>. Puede ver
+                            más parámetros relacionados con la agregación de diferencias en serie consultando la 
+                            documentación <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-pipeline-serialdiff-aggregation.html">aquí</a>.
+                        </li>
+                        <li>
+                            Guarde la visualización, dándole el nombre <strong>serial diff</strong>.
+                        </li>
+                    </ul>
+                </li>
             </ol>
         </div>
     </section>
