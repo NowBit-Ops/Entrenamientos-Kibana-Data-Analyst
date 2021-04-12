@@ -18,30 +18,30 @@
             width: 95%;
             background-image: linear-gradient(to right, #66ccff, #006699, #66ccff);
         }
-
+        
         mark {
             background-color: #ebebeb;
             color: #545454;
             padding: 0.25em;
             border-radius: 5px;
         }
-
+        
         body {
             background-color: #E5E8E8;
             padding: 3em;
             font-family: 'Roboto', sans-serif;
             color: #545454;
         }
-
+        
         section {
             background-color: #fff;
             padding: 0.001em;
         }
-
+        
         li {
             margin-bottom: 1em;
         }
-
+        
         button {
             border-radius: 10px;
             padding-left: 10px;
@@ -52,7 +52,7 @@
             border-color: #006699;
             background-color: #E5E8E8;
         }
-
+        
         img {
             font-family: Consolas;
             font-size: 18px;
@@ -61,15 +61,15 @@
             border-style: solid;
             border-color: #d6d6d6;
         }
-
+        
         .hide-answer {
             display: none;
         }
-
+        
         .cont-cent {
             text-align: center;
         }
-
+        
         .cont-left {
             font-size: 1.2em;
             text-align: left;
@@ -77,7 +77,7 @@
             margin-right: 4em;
             margin-bottom: 1em;
         }
-
+        
         .title {
             background-color: #0099cc;
             padding: 0.7em;
@@ -86,7 +86,7 @@
             font-size: 32px;
             box-shadow: 10px 10px 5px grey;
         }
-
+        
         .code {
             font-family: Consolas;
             font-size: 18px;
@@ -341,8 +341,7 @@
                     <button id="btn3" onclick="alterAnswer(3)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Ordene los documentos <strong>unicamente</strong> en orden alfabetico de la A a la Z, segun el Pais
-                    de origen (<strong>OriginCountry</strong>)
+                    Ordene los documentos <strong>unicamente</strong> en orden alfabetico de la A a la Z, segun el Pais de origen (<strong>OriginCountry</strong>)
                     <br>
                     <br>
                     <div class="cont-cent hide-answer" id="4">
@@ -356,8 +355,7 @@
                     <button id="btn4" onclick="alterAnswer(4)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Usando <strong>KQL</strong> añada un filtro para que unicamente se muestren los documentos del
-                    Carrier <strong>Logstash Airways</strong> con ciudad de destino <strong>Dubai</strong>
+                    Usando <strong>KQL</strong> añada un filtro para que unicamente se muestren los documentos del Carrier <strong>Logstash Airways</strong> con ciudad de destino <strong>Dubai</strong>
                     <br>
                     <br>
                     <div class="cont-left hide-answer code" id="5">
@@ -366,8 +364,7 @@
                     <button id="btn5" onclick="alterAnswer(5)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Remueva el filtro creado en el punto anterior y cree los filtros equivalentes usando la herramienta
-                    de <strong>Filter</strong>
+                    Remueva el filtro creado en el punto anterior y cree los filtros equivalentes usando la herramienta de <strong>Filter</strong>
                     <br>
                     <br>
                     <div class="cont-cent hide-answer" id="6">
@@ -431,8 +428,8 @@
                     <button id="btn8" onclick="alterAnswer(8)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Cree una visualización de diagrama de barras que muestre el valor promedio del tiquete
-                    (<strong>AvgTicketPrice</strong>) por cada dos días de la última semana.
+                    Cree una visualización de diagrama de barras que muestre el valor promedio del tiquete (
+                    <strong>AvgTicketPrice</strong>) por cada dos días de la última semana.
                     <br>
                     <br>
                     <div class="cont-cent hide-answer" id="9">
@@ -442,9 +439,9 @@
                     <button id="btn9" onclick="alterAnswer(9)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Cree una visualización de diagrama de barras que muestre los paises de destino
-                    (<strong>DestCounty</strong>) a los que mas tiempo en minutos toma llegar
-                    (<strong>FlightTimeMin</strong>).
+                    Cree una visualización de diagrama de barras que muestre los paises de destino (
+                    <strong>DestCounty</strong>) a los que mas tiempo en minutos toma llegar (
+                    <strong>FlightTimeMin</strong>).
                     <br>
                     <br>
                     <div class="cont-cent hide-answer" id="10">
@@ -471,8 +468,7 @@
         </div>
         <div class="cont-left">
             <label><strong>Objetivo:</strong> El objetivo de este laboratorio es familiarizarse con el lenguaje
-                <strong>KQL</strong> de kibana</label> y desarollar las habilidades que l permitan realizar busquedas
-            precisas y usar herramientras como <strong>Fuzzy Search</strong>, <strong>Reguex</strong> ó
+                <strong>KQL</strong> de kibana</label> y desarollar las habilidades que l permitan realizar busquedas precisas y usar herramientras como <strong>Fuzzy Search</strong>, <strong>Reguex</strong> ó
             <strong>wildcars</strong>
         </div>
         <div class="cont-left">
@@ -504,9 +500,7 @@
                     <button id="btn13" onclick="alterAnswer(13)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Usando <strong>KQL</strong> añada un filtro para que unicamente se muestren los documentos en los
-                    cuales
-                    el Host sea <strong>elastic</strong> y que sean peticiones tipo <strong>GET</strong>
+                    Usando <strong>KQL</strong> añada un filtro para que unicamente se muestren los documentos en los cuales el Host sea <strong>elastic</strong> y que sean peticiones tipo <strong>GET</strong>
                     <br>
                     <br>
                     <div class="cont-left hide-answer code" id="14">
@@ -515,9 +509,7 @@
                     <button id="btn14" onclick="alterAnswer(14)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Usando <strong>KQL</strong> añada un filtro para que unicamente se muestren los documentos en los
-                    cuales
-                    la ip del cliente comience con <strong>120.56.165</strong>
+                    Usando <strong>KQL</strong> añada un filtro para que unicamente se muestren los documentos en los cuales la ip del cliente comience con <strong>120.56.165</strong>
                     <br>
                     <br>
                     <div class="cont-left hide-answer code" id="15">
@@ -526,8 +518,7 @@
                     <button id="btn15" onclick="alterAnswer(15)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Usando el lenguaje de busquedas de <strong>Lucene</strong> añada un filtro para que le permita
-                    encontrar los documentos que contienen
+                    Usando el lenguaje de busquedas de <strong>Lucene</strong> añada un filtro para que le permita encontrar los documentos que contienen
                     <strong>AppleWebKit</strong> buscando <strong>ApleWeKyt</strong> en el campo <strong>agent</strong>
                     <br>
                     <br>
@@ -537,12 +528,8 @@
                     <button id="btn16" onclick="alterAnswer(16)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Usando el lenguaje de busquedas de <strong>Lucene</strong> añada un filtro que muestre unicamente
-                    los documentos los documentos en
-                    los cuales
-                    el Host sea <strong>elastic</strong>, que sean peticiones tipo <strong>GET</strong>, ó los
-                    documentos en los cuales
-                    la ip del cliente comience con <strong>120.56.165</strong> Estos deben verse de primeras.
+                    Usando el lenguaje de busquedas de <strong>Lucene</strong> añada un filtro que muestre unicamente los documentos los documentos en los cuales el Host sea <strong>elastic</strong>, que sean peticiones tipo <strong>GET</strong>, ó los
+                    documentos en los cuales la ip del cliente comience con <strong>120.56.165</strong> Estos deben verse de primeras.
                     <br>
                     <br>
                     <div class="cont-left hide-answer code" id="17">
@@ -591,8 +578,7 @@
                     <button id="btn19" onclick="alterAnswer(19)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Usando <strong>KQL</strong> busque los documentos que contengan <strong>FIREFOX</strong>
-                    en el campo <strong>message</strong>
+                    Usando <strong>KQL</strong> busque los documentos que contengan <strong>FIREFOX</strong> en el campo <strong>message</strong>
                     <br>
                     <br>
                     <div class="cont-left hide-answer code" id="20">
@@ -601,9 +587,7 @@
                     <button id="btn20" onclick="alterAnswer(20)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Usando <strong>KQL</strong> busque los documentos que contengan <strong>Firefox</strong>
-                    en el campo <strong>message</strong>. ¿Al hacer ese cambio en la busqueda la cantidad de documentos
-                    cambia?
+                    Usando <strong>KQL</strong> busque los documentos que contengan <strong>Firefox</strong> en el campo <strong>message</strong>. ¿Al hacer ese cambio en la busqueda la cantidad de documentos cambia?
                     <br>
                     <br>
                     <div class="cont-left hide-answer code" id="21">
@@ -612,8 +596,7 @@
                     <button id="btn21" onclick="alterAnswer(21)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Usando <strong>KQL</strong> busque los documentos que contengan <strong>elastic</strong>
-                    en el campo <strong>host.keyword</strong>
+                    Usando <strong>KQL</strong> busque los documentos que contengan <strong>elastic</strong> en el campo <strong>host.keyword</strong>
                     <br>
                     <br>
                     <div class="cont-left hide-answer code" id="22">
@@ -622,9 +605,7 @@
                     <button id="btn22" onclick="alterAnswer(22)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Usando <strong>KQL</strong> busque los documentos que contengan <strong>ELASTIC</strong>
-                    en el campo <strong>host.keyword</strong>. ¿Al hacer ese cambio en la busqueda la cantidad de
-                    documentos cambia?
+                    Usando <strong>KQL</strong> busque los documentos que contengan <strong>ELASTIC</strong> en el campo <strong>host.keyword</strong>. ¿Al hacer ese cambio en la busqueda la cantidad de documentos cambia?
                     <br>
                     <br>
                     <div class="cont-left hide-answer code" id="23">
@@ -637,9 +618,8 @@
                     <br>
                     <br>
                     <div class="cont-left hide-answer" id="24">
-                        Al realizar la busqueda en un campo de tipo <strong>Keyword</strong> se esta realizando una
-                        busqueda sobre un campo no analisado eso hace que la busqueda deba ser exacta y no contemple
-                        herramientas de analsisis como la equivalencia entre busqueda en minúsculas y mayúsculas
+                        Al realizar la busqueda en un campo de tipo <strong>Keyword</strong> se esta realizando una busqueda sobre un campo no analisado eso hace que la busqueda deba ser exacta y no contemple herramientas de analsisis como la equivalencia
+                        entre busqueda en minúsculas y mayúsculas
                     </div>
                     <button id="btn24" onclick="alterAnswer(24)">Mostrar respuesta</button>
                 </li>
@@ -692,8 +672,7 @@
                     <button id="btn27" onclick="alterAnswer(27)">Mostrar respuesta</button>
                 </li>
                 <li>
-                    Usando la herramienta de filtros cree un filtro muestre todos los vuelos de las aerolinas del punto
-                    anterior que <strong>NO</strong> tienen como destino la ciudad de <strong>Dublin</strong>
+                    Usando la herramienta de filtros cree un filtro muestre todos los vuelos de las aerolinas del punto anterior que <strong>NO</strong> tienen como destino la ciudad de <strong>Dublin</strong>
                     <br>
                     <br>
                     <div class="cont-cent hide-answer" id="28">
@@ -2484,6 +2463,31 @@
         </div>
         <div class="cont-left">
             <ol>
+                <li>
+                    Vamos a explorar el modo en el cuál podemos sacar provecho del modulo de Kibana de machine learning para encontrar y posteriormente mostrar anomalías en la información.
+                    En el módulo de Machine Learning de Kibana, usando el data visualizer, muestre todos los campos en el index pattern de <strong>kibana_sample_data_logs</strong>.
+                </li>
+                <li>
+                    Al momento de crear un job de machine learning, es importante tener conocimiento de la información con la cual vamos a tratar. Por ejemplo, digamos que 
+                    queremos explorar el comportamiento de los tiempos de respuesta a lo largo del tiempo. ¿Cómo podríamos hacerlo? Aquí es donde aparece Kibana lens. Cree una visualización
+                    usando Kibana lens. Asegúrese de que está trabajando sobre el index pattern <strong>kibana_sample_data_logs</strong>. Revise la información del último mes. En el eje X,
+                    visualice la información del campo <strong>@timestamp</strong>. En el eje Y la cantidad de documentos. Luego, divida la visualización por los distintos tipos de <strong>response</strong>.
+                    Escoja una representación de la información que pueda ayudar a contestar la siguiente pregunta: "¿Cuándo se recibió la mayor cantidad de logs, cuál es el segundo más frecuente código de respuesta?"
+                </li>
+                <li>
+                    Elabore otra visualizacion en lens. Veamos cómo evolucionan los bytes en el tiempo. Cree una visualización que muestre el campo <strong>@timestamp</strong> en el eje X,
+                    en el eje Y el promedio de bytes.
+                </li>
+                <li>
+                    Cree nuevamente una visualización que muestre en el eje X, el top 20 valores del campo <strong>geoip.country_code2.keyword</strong>. En el eje Y muestre la cantidad de registros.
+                    Muestre los buckets de tiempo de manera descendiente con base en orden descendiente.
+                </li>
+                <li>
+                    Elabore un dashboard con las visualizaciones creadas.
+                </li>
+                <li>
+                    Analice las visualizaciones en el dashboard configurado y trate de determinar que tipo de anomalías se podrían encontrar con base en las gráficas
+                </li>
             </ol>
         </div>
     </section>
