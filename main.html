@@ -2142,7 +2142,8 @@
                 <li>
                     Añada 4 <strong>shapes</strong> con forma de circulo en la parte izquierda alineandolos
                     verticalmente. Desde el circulo que esta en la parte superior a el que esta en la inferior
-                    añada los siguientes colores, <mark>#C83C5B</mark>, <mark>#E9782F</mark>, <mark>#F2C242</mark>, <mark>#6CBD38</mark>
+                    añada los siguientes colores, <mark>#C83C5B</mark>, <mark>#E9782F</mark>, <mark>#F2C242</mark>,
+                    <mark>#6CBD38</mark>
                     <div class="cont-cent">
                         <img src="./80.png" alt="">
                     </div>
@@ -2179,7 +2180,7 @@
                     </div>
                     <button id="btn92" onclick="alterAnswer(92)">Mostrar respuesta</button>
                 </li>
-            </ol>   
+            </ol>
         </div>
     </section>
     <section id="lab20">
@@ -2192,6 +2193,190 @@
         </div>
         <div class="cont-left">
             <ol>
+                <li>
+                    Cree una nueva visualización usando el patrón de índice <strong>kibana_sample_data_logs</strong>:
+                    <br>
+                    <br>
+                    <ul>
+                        <li>
+                            cree un gráfico de barras verticales
+                        </li>
+                        <li>
+                            divida el eje X usando histograma de fecha
+                        </li>
+                        <li>
+                            use el campo @timestamp y un intervalo semanal
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Asegúrese de que el selector de tiempo esté configurado en el último mes. Use su mouse para pasar el
+                    cursor sobre una de las barras en el gráfico de barras. La ventana emergente le mostrará la fecha
+                    del primer día de la semana representada por esta barra. ¿Qué día de la semana fue esa fecha?
+                </li>
+                <li>
+                    En muchas culturas, una semana comienza un domingo en lugar de un lunes. ¿Y si quisiera visualizar
+                    los datos como tales? Kibana no te da el control para hacerlo. Veamos cómo el conocimiento de Query
+                    DSL puede ayudar con esto.
+                    Comience haciendo clic en <stron>Inspect</stron>. En la ventana que se abre en el lado derecho,
+                    cambie <strong>View: Data</strong> a <strong>Requests</strong>
+                    <div class="cont-cent hide-answer" id="93">
+                        <img src="./87.png" style="width: 100%;">
+                    </div>
+                    <button id="btn93" onclick="alterAnswer(93)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Copie la cláusula aggs de la solicitud. Debe tener un aspecto como este:
+                    <div class="code">
+                        <pre class="">
+                            <code>
+    "aggs": {
+      "2": {
+        "date_histogram": {
+          "field": "timestamp",
+          "calendar_interval": "1w",
+          "time_zone": "America/Bogota",
+          "min_doc_count": 1
+        }
+      }
+    }
+                        </code></pre>
+                    </div>
+                    <br>
+                    Dependiendo de su ubicación, verá una zona horaria diferente.
+                </li>
+                <li>
+                    Seleccione <strong>Dev Tools</strong> en el menú de Kibana a la izquierda.
+                    <div class="cont-cent">
+                        <img src="./88.png">
+                    </div>
+                </li>
+                <li>
+                    Ahora escribira su propio request DSL según la cláusula de agregación que copiaste anteriormente.
+                    Debajo de la solicitud existente, escriba una nueva solicitud de búsqueda que consulte los índices
+                    <strong>kibana_sample_data_logs</strong> y proporcione un cuerpo vacío:
+                    <div class="code">
+                        <pre class="">
+                            <code>
+    GET kibana_sample_data_logs/_search
+    {
+                                
+    }
+                        </code></pre>
+                    </div>
+                </li>
+                <li>
+                    Ejecute esta solicitud. ¿Qué devuelve?
+                </li>
+                <li>
+                    Pegue la cláusula <strong>aggs</strong> que copió anteriormente en el cuerpo de la solicitud. El
+                    resultado debería verse así:
+                    <div class="code">
+                        <pre class="">
+                            <code>
+    GET kibana_sample_data_logs/_search
+    {
+        "aggs": {
+            "2": {
+              "date_histogram": {
+                "field": "timestamp",
+                "calendar_interval": "1w",
+                "time_zone": "America/Bogota",
+                "min_doc_count": 1
+              }
+            }
+        }                    
+    }
+                        </code></pre>
+                    </div>
+                </li>
+                <li>
+                    Ejecute esta solicitud. Debería ver 10 hits en la respuesta. Si se desplaza hacia abajo, también
+                    debería ver una serie de buckets: uno por cada semana de datos de registro de
+                    <strong>kibana_sample_data_logs</strong>.
+                </li>
+                <li>
+                    A menudo, al ejecutar agregaciones, no le interesan los 10 hits que Elasticsearch devuelve de forma
+                    predeterminada. Para eliminar esos resultados de la respuesta y hacer que la solicitud se ejecute
+                    más rápido, puede agregar "size": 0 a la solicitud.
+
+                    Hágalo y ejecute la solicitud actualizada. La solicitud debería verse así:
+                    <div class="code">
+                        <pre class="">
+                            <code>
+    GET kibana_sample_data_logs/_search
+    {
+        "size": 0,
+        "aggs": {
+            "2": {
+              "date_histogram": {
+                "field": "timestamp",
+                "calendar_interval": "1w",
+                "time_zone": "America/Bogota",
+                "min_doc_count": 1
+              }
+            }
+        }                    
+    }
+                        </code></pre>
+                    </div>
+                </li>
+                <li>
+                    Todos los buckets que se devuelven tienen una propiedad <mark>key_as_string</mark> que indica la
+                    fecha del lunes que comenzó cada semana. Cambiemos la agregación para que devuelva buckets
+                    semanales que comienzan en domingo.
+
+                    La documentación para la agregación <strong>date_histogram</strong> describe cómo puede usar un
+                    parámetro de <mark>"offset"</mark> para cambiar el valor inicial de cada bucket. Para retrasar la
+                    fecha de inicio de cada bucket un día, agregaría "offset": "-1d" a los parámetros del
+                    date_histogram.
+
+                    Agregue "offset": "-1d" a la solicitud, justo debajo del parámetro min_doc:
+                    <div class="code">
+                        <pre class="">
+                            <code>
+    GET kibana_sample_data_logs/_search
+    {
+        "size": 0,
+        "aggs": {
+            "2": {
+              "date_histogram": {
+                "field": "timestamp",
+                "calendar_interval": "1w",
+                "time_zone": "America/Bogota",
+                "min_doc_count": 1,
+                "offset": "-1d"
+              }
+            }
+        }                    
+    }
+                        </code></pre>
+                    </div>
+                </li>
+                <li>
+                    Ejecute la solicitud y valide que la respuesta ahora tenga depósitos semanales que comiencen un
+                    domingo en lugar de un lunes.
+                </li>
+                <li>
+                    Veamos cómo puede usar este parámetro para actualizar la visualización que creó en el paso 1.
+                    Regrese a la visualiazación que creo.
+                </li>
+                <li>
+                    Seleccione la opcion <strong>Advandce</strong> dentro de el Bucket <strong>Date Histogram</strong>
+                    <div class="cont-cent" >
+                        <img src="./89.png">
+                    </div>
+                </li>
+                <li>
+                    Pegue lo siguiente en el cuadro de texto <strong>JSON input</strong>:
+                    <div class="cont-left code" >
+                        { "offset": "-1d" }
+                    </div>
+                    Tenga en cuenta que este es el parámetro que utilizó anteriormente, rodeado por dos llaves.
+                </li>
+                <li>
+                    Seleccione <strong>Update</strong> y mire la diferencia
+                </li>
             </ol>
         </div>
     </section>
