@@ -2206,7 +2206,7 @@
                 </li>
                 <li>
                     Copie la cláusula aggs de la solicitud. Debe tener un aspecto como este:
-                    <div class="cont-left code">
+                    <div class="code">
                         <pre class="">
                             <code>
     "aggs": {
@@ -2234,7 +2234,7 @@
                     Ahora escribira su propio request DSL según la cláusula de agregación que copiaste anteriormente.
                     Debajo de la solicitud existente, escriba una nueva solicitud de búsqueda que consulte los índices
                     <strong>kibana_sample_data_logs</strong> y proporcione un cuerpo vacío:
-                    <div class="cont-left code">
+                    <div class="code">
                         <pre class="">
                             <code>
     GET kibana_sample_data_logs/_search
@@ -2250,7 +2250,7 @@
                 <li>
                     Pegue la cláusula <strong>aggs</strong> que copió anteriormente en el cuerpo de la solicitud. El
                     resultado debería verse así:
-                    <div class="cont-left code">
+                    <div class="code">
                         <pre class="">
                             <code>
     GET kibana_sample_data_logs/_search
@@ -2280,7 +2280,7 @@
                     más rápido, puede agregar "size": 0 a la solicitud.
 
                     Hágalo y ejecute la solicitud actualizada. La solicitud debería verse así:
-                    <div class="cont-left code">
+                    <div class="code">
                         <pre class="">
                             <code>
     GET kibana_sample_data_logs/_search
@@ -2311,7 +2311,7 @@
                     date_histogram.
 
                     Agregue "offset": "-1d" a la solicitud, justo debajo del parámetro min_doc:
-                    <div class="cont-left code">
+                    <div class="code">
                         <pre class="">
                             <code>
     GET kibana_sample_data_logs/_search
@@ -2428,9 +2428,8 @@
                             Debería mostrar un cuadro de texto que se utiliza para
                             definir parámetros que no forman parte de la interfaz de usuario. Va a agregar un parámetro
                             de retraso. Escriba lo siguiente en el cuadro de texto: <mark>{"lag": 7}</mark>. Puede ver
-                            más parámetros relacionados con la agregación de diferencias en serie consultando la
-                            documentación <a
-                                href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-pipeline-serialdiff-aggregation.html">aquí</a>.
+                            más parámetros relacionados con la agregación de diferencias en serie consultando la 
+                            documentación <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-pipeline-serialdiff-aggregation.html">aquí</a>.
                         </li>
                         <li>
                             Guarde la visualización, dándole el nombre <strong>serial diff</strong>.
@@ -2450,226 +2449,6 @@
         </div>
         <div class="cont-left">
             <ol>
-                <li>
-                    Comencemos recreando un gráfico de barras de date histogram diario simple como una
-                    visualización de <strong>Vega-Lite</strong>. Seleccione <strong>Dev Tools</strong> en el menú de
-                    Kibana a la izquierda y ejecute la
-                    siguiente solicitud de agregación:
-                    <div class="cont-left code">
-                        <pre class="">
-                            <code>
-GET kibana_sample_data_logs/_search
-{
-  "aggs": {
-    "my_histogram": {
-      "date_histogram": {
-        "field": "@timestamp",
-        "calendar_interval": "1d"
-      }
-    }
-  },
-  "size": 0
-}
-                        </code></pre>
-                    </div>
-                </li>
-                <li>
-                    La respuesta devolverá un conjunto de buckets. En la respuesta JSON, ¿cuál es la ruta a la matriz de
-                    depósitos?
-                    <br>
-                    <br>
-                    <div class="cont-left code hide-answer" id="94">
-                        aggregations.my_histogram.buckets
-                    </div>
-                    <button id="btn94" onclick="alterAnswer(94)">Mostrar respuesta</button>
-
-                </li>
-                <li>
-                    ¿Cuáles son las tres propiedades que encuentras en cada bucket?
-                    <br>
-                    <br>
-                    <div class="cont-left hide-answer" id="95">
-                        <ul>
-                            <li>
-                                key_as_string
-                            </li>
-                            <li>
-                                key
-                            </li>
-                            <li>
-                                doc_count
-                            </li>
-                        </ul>
-                    </div>
-                    <button id="btn95" onclick="alterAnswer(95)">Mostrar respuesta</button>
-                </li>
-                <li>
-                    Visite la página de ejemplo de <a href="https://vega.github.io/vega-lite/examples/">Vega-Lite</a>,
-                    haga clic en el <a href="https://vega.github.io/vega-lite/examples/bar.html">Simple Bar Chart
-                        example</a> y copie la especificación JSON de Vega-Lite.
-                </li>
-                <li>
-                    Seleccione <strong>Visuzalize Library</strong> en el menú de Kibana a la izquierda y cree una nueva
-                    visualización de tipo <strong>Custom visualization</strong>
-                    <div class="cont-cent">
-                        <img src="./90.png">
-                    </div>
-                </li>
-                <li>
-                    Elimine todo el JSON del lado izquierdo y pegue <strong>Simple Bar Chart example</strong>
-                    JSON Vega-Lite que copió anteriormente:
-                </li>
-                <li>
-                    Haga clic en <strong>Apply changes</strong>. Debería ver el mismo gráfico de barras que se mostró en
-                    la página de
-                    ejemplo de Vega-Lite. Es posible que vea una advertencia sobre el uso de la versión 4. Para
-                    deshacerse de ella, reemplace <mark>v5</mark> en la línea 2 de la solicitud en el lado izquierdo por
-                    <mark>v2</mark>.
-                </li>
-                <li>
-                    Reemplacemos los valores codificados fijos con algunos datos de Elasticsearch. Elimine la
-                    matriz de valores de la sección de datos, por lo que terminará con una sección de datos vacía:
-                    <div class="cont-left code">
-                        <pre class="">
-{
-  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
-  "description": "A simple bar chart with embedded data.",
-  "data": {
-
-  },
-  "mark": "bar",
-  "encoding": {
-    "x": {"field": "a", "type": "ordinal", "axis": {"labelAngle": 0}},
-    "y": {"field": "b", "type": "quantitative"}
-  }
-}
-                        </pre>
-                    </div>
-                </li>
-                <li>
-                    Coloque la estructura de una solicitud a Elasticsearch en la sección de datos, que consta de:
-                    <ul>
-                        <li>
-                            una cláusula de <mark>URL</mark> con una propiedad de <mark>Index</mark> y <mark>Body</mark>
-                        </li>
-                        <li>
-                            una cláusula <mark>format</mark> con una propiedad de <mark>property</mark>
-                        </li>
-                        <div class="cont-left code">
-                            <pre class="">
-{
-  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
-  "description": "A simple bar chart with embedded data.",
-  "data": {
-    "url": {
-        "index": "",
-        "body": {
-
-        }
-    },
-    "format": {
-        "property": ""
-    }
-  },
-  "mark": "bar",
-  "encoding": {
-    "x": {"field": "a", "type": "ordinal", "axis": {"labelAngle": 0}},
-    "y": {"field": "b", "type": "quantitative"}
-  }
-}
-                            </pre>
-                        </div>
-                    </ul>
-                </li>
-                <li>
-                    Ingrese valores para las tres propiedades vacías:
-                    <ul>
-                        <li>
-                            el <mark>Index</mark> debe establecerse en <strong>kibana_sample_data_logs</strong>
-                        </li>
-                        <li>
-                            el <mark>body</mark> debe establecerse en el cuerpo de la solicitud que ejecutó en el paso 1
-                        </li>
-                        <li>
-                            el <mark>property</mark> debe establecerse en la ruta JSON de los depósitos en la respuesta:
-                            <mark>aggregation.my_histogram.buckets</mark>
-                        </li>
-                    </ul>
-                    La solicitud resultante debe ser:
-                    <div class="cont-left code">
-                        <pre class="">
-{
-  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
-  "description": "A simple bar chart with embedded data.",
-  "data": {
-    "url": {
-        "index": "kibana_sample_data_logs",
-        "body": {
-          "aggs": {
-            "my_histogram": {
-              "date_histogram": {
-                "field": "@timestamp",
-                "calendar_interval": "1d"
-              }
-            }
-          },
-          "size": 0
-        }
-    },
-    "format": {
-        "property": "aggregations.my_histogram.buckets"
-    }
-  },
-  "mark": "bar",
-  "encoding": {
-    "x": {"field": "a", "type": "ordinal", "axis": {"labelAngle": 0}},
-    "y": {"field": "b", "type": "quantitative"}
-  }
-}
-                        </pre>
-                    </div>
-                </li>
-                <li>
-                    Finalmente, hacia la parte inferior, reemplace <mark>"field": "a"</mark> con <mark>"field":
-                        "key_as_string"</mark> y reemplace
-                    <mark>"field": "b"</mark> con <mark>"field": "doc_count"</mark>.La solicitud ahora debería ser:
-                    <div class="cont-left code">
-                        <pre class="">
-    {
-      "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
-      "description": "A simple bar chart with embedded data.",
-      "data": {
-        "url": {
-            "index": "apachelogs-*",
-            "body": {
-              "aggs": {
-                "my_histogram": {
-                  "date_histogram": {
-                    "field": "@timestamp",
-                    "calendar_interval": "1d"
-                  }
-                }
-              },
-              "size": 0
-            }
-        },
-        "format": {
-            "property": "aggregations.my_histogram.buckets"
-        }
-      },
-      "mark": "bar",
-      "encoding": {
-        "x": {"field": "key_as_string", "type": "ordinal", "axis": {"labelAngle": 0}},
-        "y": {"field": "doc_count", "type": "quantitative"}
-      }
-    }
-                        </pre>
-                    </div>
-                </li>
-                <li>
-                    Haga clic en <strong>Update</strong>. Ahora debería ver un histograma diario de los datos de
-                    registro de <strong>kibana_sample_data_logs</strong>
-                </li>
             </ol>
         </div>
     </section>
@@ -2707,7 +2486,7 @@ GET kibana_sample_data_logs/_search
                     Elabore un dashboard con las visualizaciones creadas.
                 </li>
                 <li>
-                    Analice las visualizaciones en el dashboard configurado y trate de determinar que tipo de anomalías se podrían encontrar con base en las gráficas
+                    Analice las visualizaciones en el dashboard configurado y trate de determinar que tipo de anomalías se podrían encontrar con base en las gráficas.
                 </li>
             </ol>
         </div>
@@ -2719,9 +2498,84 @@ GET kibana_sample_data_logs/_search
         <div class="cont-left">
             <label><strong>Objetivo:</strong> En este lab, comenzará a crear sus primeros jobs de machine learning.
                 Comenzará a explorar los diferentes asistentes disponibles para crear jobs de machine learning.
+                <br>
+                <br>
+                <strong>Through this lesson:</strong> Para cada job de machine learning creado asegurese de usar la información completa del dataset.
         </div>
         <div class="cont-left">
             <ol>
+                <li>
+                    Empecemos creando el job de machine learning más simple que se puede tener. Un single metric job sobre la cantidad de documentos en el tiempo. Vaya al modulo de 
+                    Machine Learning y defina un solo single metric job que analice la cantidad de documentos en el index pattern de <strong>kibana_sample_data_logs</strong>. Use un bucket 
+                    span de 30 minutos. Llame a este job: <strong>first_job</strong>.
+                    <div class="cont-cent hide-answer" id="94">
+                        <img src="./24.1.png" alt="">
+                        <img src="./24.2.png" alt="">
+                        <img src="./24.3.png" alt="">
+                        <img src="./24.4.png" alt="">
+                        <img src="./24.5.png" alt="">
+                        <img src="./24.6.png" alt="">
+                    </div>
+                    <button id="btn94" onclick="alterAnswer(94)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Sin mirar los resultados del job y revisando solo el resumen de ejecución de este, responda cuántas anomalías severas se han detectado.
+                    <div class="cont-cent hide-answer" id="95">
+                        Al ejectuar el job se pintaran unas lineas azules, amarillas y rojas, representando una severidad baja, media y alta respectivamente.
+                        En el siguiente ejemplo se encuentra 1 anomalía severa.
+                        <img src="./24.7.png" alt="">
+                    </div>
+                    <button id="btn95" onclick="alterAnswer(95)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Ahora cree un job un poco más complejo. Use el single metric job nuevamente, pero esta vez que analice la suma de bytes sobre el tiempo. El bucket span debería 
+                    ser de 30 minutos y el job debe llamarse: <strong>second_job</strong>.
+                    <div class="cont-cent hide-answer" id="96">
+                        <img src="./24.8.png" alt="">
+                    </div>
+                    <button id="btn96" onclick="alterAnswer(96)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Debería poder ver en el resumen del job de machine learning una area sombreada de color azul. ¿Qué cree que representa? Mirar la parte media del gráfico
+                    debería darle una buena indicación de lo que está sucediendo.
+                    <div class="cont-cent hide-answer" id="97">
+                        Representa los limites de los valores esperados según el análisis de la información histórica.
+                    </div>
+                    <button id="btn97" onclick="alterAnswer(97)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Ahora vamos a intentar crear un multi metric job. El objetivo será monitorear la cantidad de logs provenientes de cada país. Use el campo <strong>geo.src</strong>
+                    para dividir la información. El bucket span debería ser de 30 minutos. Llame a este job: <strong>third_job</strong>
+                    <div class="cont-cent hide-answer" id="98">
+                        <img src="./24.9.png" alt="">
+                        <img src="./24.10.png" alt="">
+                        <img src="./24.11.png" alt="">
+                        <img src="./24.12.png" alt="">
+                    </div>
+                    <button id="btn98" onclick="alterAnswer(98)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Los multi metric job no solo funcionan para dividir información, también se puede usar como un modo más escalable de ejecutar multiples single metric jobs en paralelo. 
+                    Por ejemplo, se podrían crear los dos single metric jobs que creamos previamente. Cree un multi metric job llamado <strong>fourth_job</strong> que tenga dos detectors, 
+                    uno de event rate (cantidad de documentos) y otro con la suma de bytes sobre el tiempo. Use un bucket span de 30 minutos.
+                    <div class="cont-cent hide-answer" id="99">
+                        <img src="./24.11.png" alt="">
+                        <img src="./24.13.png" alt="">
+                    </div>
+                    <button id="btn99" onclick="alterAnswer(99)">Mostrar respuesta</button>
+                </li>
+                <li>
+                    Por último, cree un population job. La meta será encontrar un agente anómalo, para encontrarlo debemos hallar el agente que tenga una alta cardinalidad sobre el campo
+                    <strong>response</strong>. El job debe llamarse <strong>fifth_job</strong> y el bucket span debería ser de 30 minutos.
+                    <div class="cont-cent hide-answer" id="100">
+                        <img src="./24.14.png" alt="">
+                        <img src="./24.15.png" alt="">
+                        <img src="./24.16.png" alt="">
+                        <img src="./24.17.png" alt="">
+                        <img src="./24.18.png" alt="">
+                    </div>
+                    <button id="btn100" onclick="alterAnswer(100)">Mostrar respuesta</button>
+                </li>
             </ol>
         </div>
     </section>
