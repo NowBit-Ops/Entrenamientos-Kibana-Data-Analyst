@@ -3127,6 +3127,88 @@ GET kibana_sample_data_logs/_search
             </div>
             <div class="cont-left">
                 <ol>
+                    <li>
+                        Primero generaremos un PDF del dashboard de eCommerce. Seleccione el dashboard de ingresos
+                        <stron>[eCommerce] Revenue Dashboard.</stron>
+                        <ul>
+                            <li>
+                                Genere un PDF del panel de comercio electrónico yendo a <strong>share</strong>
+                                y luego en <strong>PDF report</strong> Asegúrese de que el PDF generado
+                                esté optimizado para la impresión.
+                            </li>
+                            <li>
+                                Recupere y descargue este informe de la sección Informes de la interfaz de
+                                administración. Es posible que el informe tarde unos minutos en completarse.
+                            </li>
+                            <li>
+                                Ahora que hemos generado nuestro primer PDF, comencemos a personalizarlo. Vaya a
+                                <strong>Stack Managment</strong> y luego a <strong>Advance Settings</strong>. Busque
+                                <strong>PDF footer image</strong>. Agregue alguna imagen en PNG.
+                                Genere un nuevo informe y asegúrese de
+                                que el nuevo logotipo aparezca en el pie de página del PDF.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        A continuación, intentemos generar un CSV a partir de nuestros documentos.
+                        <ul>
+                            <li>
+                                Vaya a la interfaz de <strong>Discovery</strong> y escriba una consulta que seleccionará
+                                    todos losdocumentos que tienen Zapatos de hombre en el campo de categoría.
+                            </li>
+                            <li>
+                                Guarde la búsqueda y asígnele el nombre <mark>category_search</mark>.
+                            </li>
+                            <li>
+                                Genere un CSV a partir de esta búsqueda guardada. Vaya a
+                                <strong>Share</strong> y luego a <strong>CSV Report</strong>.
+                            </li>
+                            <li>
+                                Asegúrese de que el CSV se haya generado correctamente. Tenga en cuenta que es posible
+                                cambiar el separador del CSV en Configuración avanzada.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        A continuación, exportemos e importemos visualizaciones con Kibana.
+                        <ul>
+                            <li>
+                                Vaya a <strong>Managment</strong> y luego a 
+                                <strong>Saved Objects</strong>.
+                            </li>
+                            <li>
+                                Seleccione <strong>Export 222 Objects</strong> (el numero
+                                de objetos puede variar) y luego
+                                seleccione <strong>Export all</strong>
+                            </li>
+                            <li>
+                                Guarde el archivo <mark>export.ndjson</mark>
+                            </li>
+                            <li>
+                                Seleccione la opcion para seleccionar todo y luego seleccione
+                                <strong>delete</strong>. Realice este paso hasta quedar con 0 objetos
+                                <div class="cont-cent">
+                                    <img src="./101.png">
+                                </div>
+                            </li>
+                            <li>
+                                Ingrese a la seccion de dashboards. ¿Encuentra algo?
+                            </li>
+                            <li>
+                                Ingrese a la seccion de visuzalizaciones. ¿Encuentra algo?
+                            </li>
+                            <li>
+                                Regrese a la seccion de Saved objects y seleccione import.
+                                Cargue el archivo que descargo anteriormente
+                            </li>
+                            <li>
+                                Ingrese a la seccion de dashboards. ¿Encuentra algo?
+                            </li>
+                            <li>
+                                Ingrese a la seccion de visuzalizaciones. ¿Encuentra algo?
+                            </li>
+                        </ul>
+                    </li>
                 </ol>
             </div>
         </section>
