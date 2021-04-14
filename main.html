@@ -3154,7 +3154,7 @@ GET kibana_sample_data_logs/_search
                         <ul>
                             <li>
                                 Vaya a la interfaz de <strong>Discovery</strong> y escriba una consulta que seleccionará
-                                    todos losdocumentos que tienen Zapatos de hombre en el campo de categoría.
+                                todos losdocumentos que tienen Zapatos de hombre en el campo de categoría.
                             </li>
                             <li>
                                 Guarde la búsqueda y asígnele el nombre <mark>category_search</mark>.
@@ -3173,7 +3173,7 @@ GET kibana_sample_data_logs/_search
                         A continuación, exportemos e importemos visualizaciones con Kibana.
                         <ul>
                             <li>
-                                Vaya a <strong>Managment</strong> y luego a 
+                                Vaya a <strong>Managment</strong> y luego a
                                 <strong>Saved Objects</strong>.
                             </li>
                             <li>
@@ -3224,6 +3224,34 @@ GET kibana_sample_data_logs/_search
             </div>
             <div class="cont-left">
                 <ol>
+                    <li>
+                        Comencemos con una tarea sencilla. Crea dos espacios. El primer espacio se llamará
+                        <strong>Flight Analyst</strong> y el segundo espacio se llamará <strong>eComerce
+                            Analyst</strong>. Dedique algo de tiempo a
+                        personalizar el espacio.
+                    </li>
+                    <li>
+                        Ahora debe comenzar a migrar las visualizaciones entre espacios. Exporte las visualizaciones de
+                        vuelo desde el espacio predeterminado al espacio de <strong>Flight Analyst</strong>.
+                    </li>
+                    <li>
+                        Haga lo mismo con las visualizaciones de <strong>[eComerce]</strong> pero muévalas al espacio de
+                        comercio electrónico.
+                    </li>
+                    <li>
+                        Cree un tercer espacio llamado <strong>visualización</strong>. Este espacio tendrá todos los
+                        objetos
+                        guardados del conjunto de datos de <strong>Flight</strong>, pero el espacio solo habrá
+                        habilitado el tablero y la
+                        aplicación de visualización. También tendrá habilitadas las funciones de administración de
+                        objetos guardados y administración de <strong>Index Pattern</strong>.
+                    </li>
+                    <li>
+                        Cree un cuarto espacio llamado <strong>Discover</strong>. Este espacio tendrá todos los objetos guardados
+                        del conjunto de datos de vuelo, pero el espacio solo tendrá habilitada la aplicación de
+                        <strong>Discovery</strong>. También tendrá habilitadas las funciones de administración de objetos guardados
+                        y administración de <strong>Index Pattern</strong>.
+                    </li>
                 </ol>
             </div>
         </section>
