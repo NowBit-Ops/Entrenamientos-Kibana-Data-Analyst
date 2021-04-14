@@ -2883,14 +2883,21 @@ GET kibana_sample_data_logs/_search
                         el 13 de abril de 2020 a las 11:30 p.m.
                     </li>
                     <li>
-                        Ejecute un trabajo de previsión durante los próximos 7 días.
+                        Ejecute un trabajo de forecasting durante los próximos 7 días.
                     </li>
                     <li>
-                        Vaya a la pestaña de administración de trabajos. Seleccione 6th_job y luego inicie el suministro
-                        de datos. Continúe con el suministro de datos desde la fecha en que se detuvo y no especifique
-                        ninguna hora de finalización (búsqueda en tiempo real) y luego inicie el suministro de datos.
-                        Regrese al visor de métricas únicas. Haga clic en pronóstico y luego observe el trabajo de
-                        pronóstico anterior que creó.
+                        Realice el correspondiente analsisis de forecasting
+                        <ul>
+                            <li>
+                                ¿El analisis coincide con los datos previos al borrado?
+                            </li>
+                            <li>
+                                ¿Donde estan las diferencias entre ambos?
+                            </li>
+                            <li>
+                                ¿Que se puede deducir del trabajo de forecasting?
+                            </li>
+                        </ul>
                     </li>
                 </ol>
             </div>
@@ -2908,6 +2915,141 @@ GET kibana_sample_data_logs/_search
             </div>
             <div class="cont-left">
                 <ol>
+                    <li>
+                        Primero, descubramos las aplicaciones relacionadas con el caso de uso de observabilidad. Hay 4
+                        aplicaciones en Kibana relacionadas con la observabilidad. La aplicación de <stron>uptime
+                        </stron>,
+                        la aplicación <strong>metrics</strong> , la aplicación de <strong>logs</strong>,
+                        la aplicación <strong>APM</strong>.
+                    </li>
+                    <li>
+                        Comencemos primero con la apliacion de <stron>uptime</stron> Ve a la aplicación de tiempo de
+                        actividad.
+                        <br>
+                        <div class="cont-cent">
+                            <img src="./91.png">
+                        </div>
+                    </li>
+                    <li>
+                        La aplicación <stron>uptime</stron> aprovecha los datos recopilados por Heartbeat. Heartbeat es
+                        un software que prueba si se esta activo un servicio específico. Si Heartbeat estubiera
+                        monitoreando a Kibana, si Kibana deja de funcionar o no es accesible, el <stron>uptime</stron>
+                        lo detectará y lo registrará.
+                    </li>
+                    <li>
+                        Vaya a la aplicación <strong>logs</strong>
+                        <div class="cont-cent">
+                            <img src="./92.png">
+                        </div>
+                    </li>
+                    <li>
+                        Deberia encontrar una apliacion como la siguiente, Vamos a desglosar y entender las
+                        funcionalidades
+                        <div class="cont-cent">
+                            <img src="./93.png" style="width: 100%;">
+                        </div>
+                    </li>
+                    <li>
+                        La barra de busqueda nos permite usar <strong>KQL</strong> para realizar busquedas
+                        <div class="cont-cent">
+                            <img src="./94.png">
+                        </div>
+                    </li>
+                    <li>
+                        La barra de fecha nos permite filtrar por fehca
+                        <div class="cont-cent">
+                            <img src="./95.png">
+                        </div>
+                    </li>
+                    <li>
+                        Con la opcion <strong>Highlights</strong> podemos resaltar los valores que queramos
+                        <div class="cont-cent">
+                            <img src="./96.png">
+                        </div>
+                    </li>
+                    <li>
+                        Vaya a la aplicación <strong>Metrics</strong>
+                        <div class="cont-cent">
+                            <img src="./97.png">
+                        </div>
+                    </li>
+                    <li>
+                        La aplicación <strong>Metrics</strong> aprovecha los datos recopilados por metricbeat
+                        o el modulo de monitoreo. En esta seccion podremos ver metricas del sistema y datos de
+                        monitoreo
+                    </li>
+                    <li>
+                        Vaya a la aplicación <strong>APM</strong>
+                        <div class="cont-cent">
+                            <img src="./98.png">
+                        </div>
+                    </li>
+                    <li>
+                        La aplicación <strong>APM</strong> aprovecha los datos recopilados por APM
+                        aca podremos visualizar y monitorear los datos de nuestra apliacion usando APM
+                    </li>
+                    <li>
+                        Realice el mismo recorrido por los modulos de <strong>Enterprise Search</strong>
+                        <ul>
+                            <li>
+                                ¿Cuales son las aplicaciones de <strong>Enterprise Search</strong>?
+                                <div class="cont-left hide-answer" id="101">
+                                    <ul>
+                                        <li>
+                                            App Search, que sirve para crear un ecosistema de una apliacion de busqueda
+                                        </li>
+                                        <li>
+                                            WorkPlace Search, que tiene una aplicacion completa para realizar busquedas
+                                            dentro de las bases de conocimiento de las organizaciones
+                                        </li>
+                                    </ul>
+                                </div>
+                                <br>
+                                <button id="btn101" onclick="alterAnswer(101)">Mostrar respuesta</button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Realice el mismo recorrido por los modulos de <strong>Security</strong>
+                        <ul>
+                            <li>
+                                ¿Cuales son las aplicaciones de <strong>Security</strong>?
+                                <div class="cont-left hide-answer" id="102">
+                                    <ul>
+                                        <li>
+                                            Detections
+                                        </li>
+                                        <li>
+                                            Host
+                                        </li>
+                                        <li>
+                                            Network
+                                        </li>
+                                        <li>
+                                            Timelines
+                                        </li>
+                                        <li>
+                                            Cases
+                                        </li>
+                                        <li>
+                                            Administration
+                                        </li>
+                                    </ul>
+                                </div>
+                                <br>
+                                <button id="btn102" onclick="alterAnswer(102)">Mostrar respuesta</button>
+                            </li>
+                            <li>
+                                ¿Por que no hay datos disponibles en los modulos de seguridad?
+                                <div class="cont-left hide-answer" id="102">
+                                    En este momento no se encuentra habilitado el <strong>Elastic Endpoint Security</strong>
+                                    al activarlo veremos los datos segmentados en cada una de las apps
+                                </div>
+                                <br>
+                                <button id="btn102" onclick="alterAnswer(102)">Mostrar respuesta</button>
+                            </li>
+                        </ul>
+                    </li>
                 </ol>
             </div>
         </section>
