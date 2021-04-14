@@ -3041,12 +3041,13 @@ GET kibana_sample_data_logs/_search
                             </li>
                             <li>
                                 ¿Por que no hay datos disponibles en los modulos de seguridad?
-                                <div class="cont-left hide-answer" id="102">
-                                    En este momento no se encuentra habilitado el <strong>Elastic Endpoint Security</strong>
+                                <div class="cont-left hide-answer" id="103">
+                                    En este momento no se encuentra habilitado el <strong>Elastic Endpoint
+                                        Security</strong>
                                     al activarlo veremos los datos segmentados en cada una de las apps
                                 </div>
                                 <br>
-                                <button id="btn102" onclick="alterAnswer(102)">Mostrar respuesta</button>
+                                <button id="btn103" onclick="alterAnswer(103)">Mostrar respuesta</button>
                             </li>
                         </ul>
                     </li>
@@ -3065,6 +3066,51 @@ GET kibana_sample_data_logs/_search
             </div>
             <div class="cont-left">
                 <ol>
+                    <li>
+                        Usando la interfaz <strong>Discovery</strong>, explore
+                        los documentos en el conjunto de datos de comercio electrónico. Preste atención a los formatos
+                        de datos de los diferentes campos, especialmente el campo <mark>taxless_total_price</mark>.
+                    </li>
+                    <li>
+                        Vaya a <strong>Stack Managment</strong> y luego a <strong>Index Patterns</strong>.
+                        Seleccione el <strong>Index Patterns</strong>:
+                        kibana_sample_data_ecommerce. Vaya a la pestaña <strong>scripted fields</strong> y luego Agregar
+                        <strong>scripted fields</strong>.
+                        <div class="cont-cent">
+                            <img src="./99.png" style="width: 100%;">
+                        </div>
+                    </li>
+                    <li>
+                        Cree un nuevo campo llamado <mark>price_with_vat</mark> que aplique una tasa impositiva del 20%
+                        al campo
+                        <mark>taxless_total_price</mark>. La sintaxis en Painless para recuperar el valor de un campo
+                        es:
+                        <mark>doc[name_of_the_field].value</mark>
+                        <div class="cont-left hide-answer code" id="104" style="margin-top: 1em;">
+                            doc['taxless_total_price'].value*1.2
+                        </div>
+                        <br>
+                        <button id="btn104" onclick="alterAnswer(104)">Mostrar respuesta</button>
+                    </li>
+                    <li>
+                        Obtenga una vista previa de los resultados para asegurarse de que los campos se calculan como se
+                        esperaba. (Haga clic en <strong>Get help with the syntax and preview the results of your
+                            script.</strong> y haga clic en la pestaña <strong>Preview results</strong>).
+                        <br>
+                        <div class="cont-cent">
+                            <img src="./100.png">
+                        </div>
+                    </li>
+                    <li>
+                        Cree el campo seleccionando <strong>create field</strong>
+                    </li>
+                    <li>
+                        Vuelva a la interfaz de <strong>Discovery</strong> y busque el campo <mark>price_with_vat</mark>
+                        recién creado. Debería poder ver el campo en sus documentos.
+                    </li>
+                    <li>
+                        Cree una visualización de métrica para calcular el promedio de <mark>price_with_vat</mark>.
+                    </li>
                 </ol>
             </div>
         </section>
